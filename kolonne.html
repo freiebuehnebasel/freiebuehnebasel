@@ -11,31 +11,52 @@
     header h1 { font-family: 'Cinzel Decorative', cursive; font-size:2.2rem; margin:0; color:#D4AF37; }
     a { color:#D4AF37; text-decoration:none; }
     main { padding:2rem; max-width:1100px; margin:auto; }
-    h2 { font-family: 'Cinzel Decorative', cursive; color:#D4AF37; border-bottom:2px solid #D4AF37; padding-bottom:0.3rem; margin-top:2rem; }
+    h2, h3 { font-family: 'Cinzel Decorative', cursive; color:#D4AF37; }
+    h2 { border-bottom:2px solid #D4AF37; padding-bottom:0.3rem; margin-top:2rem; }
     .back { display:inline-block; margin:1rem 0 0; }
+    .meta { color:#444; }
+    /* gallery */
     .gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-top:1rem; }
+    .gallery figure { margin:0; }
     .gallery img { width:100%; height:260px; object-fit:cover; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-    .warn { background:#fff3cd; color:#664d03; border:1px solid #ffecb5; padding:10px 14px; border-radius:10px; margin:10px 0; }
+    .note { background:#fff3cd; color:#664d03; border:1px solid #ffecb5; padding:10px 14px; border-radius:10px; margin:10px 0; }
     footer { text-align:center; font-size:0.9rem; color:#666; padding:2rem; }
   </style>
 </head>
-
 <body>
   <header>
     <h1>Die Dritte Kolonne</h1>
     <a class="back" href="index.html">← Zurück zur Startseite</a>
   </header>
   <main>
+    <h2>Über die Produktion</h2>
+    <p>2025 präsentierte die Freie Bühne Basel im Theater Bau 3 Basel an zwei Wochenenden das Stück «Die Dritte Kolonne» von Franz Hohler. Das skurrile, tragisch‑komische Werk ist trotz Uraufführung 1979 inhaltlich hochaktuell.</p>
+    <p>Im Zentrum stehen zwei Frauen, Kolleginnen in einem Medikamentenumschlag. Ihre Strategien im Umgang mit psychischer Gesundheit entwickeln sich in gegensätzliche Richtungen – zwischen vollständiger Anpassung und dem Ausbruch aus Routinen. Die feine, sarkastische Feder Hohlers eröffnet dabei Raum für Nachdenken und für Lachen.</p>
+
+    <h2>Besetzung</h2>
+    <ul>
+      <li>Die Ältere: Anja Schlegel</li>
+      <li>Die Jüngere: Carolin Pfäffli</li>
+      <li>Die Gegensprechanlage: Silvio Bruder</li>
+    </ul>
+
+    <h2>Team</h2>
+    <ul>
+      <li>Regie: Jasmin Wenger</li>
+      <li>Produktionsleitung: Benjamin Zimber</li>
+    </ul>
+
     <h2>Impressionen</h2>
-    <div class="warn">Hinweis: <code>kolonne4.HEIC</code> wird in vielen Browsern nicht angezeigt. Wenn du mir eine <strong>kolonne4.jpg</strong> gibst, ersetze ich sie sofort.</div>
     <div class="gallery">
-<img src="Bilder/Kolonne/kolonne1.jpg" alt="Bild 1">
-<img src="Bilder/Kolonne/kolonne2.jpg" alt="Bild 2">
-<img src="Bilder/Kolonne/kolonne3.jpg" alt="Bild 3">
-<img src="Bilder/Kolonne/kolonne4.HEIC" alt="Bild 4">
-<img src="Bilder/Kolonne/kolonne5.jpg" alt="Bild 5">
-<img src="Bilder/Kolonne/kolonne6.jpeg" alt="Bild 6">
-</div>
+      <figure><img src="Bilder/Kolonne/kolonne1.jpg" alt="Kolonne Bild 1"></figure>
+      <figure><img src="Bilder/Kolonne/kolonne2.jpg" alt="Kolonne Bild 2"></figure>
+      <figure><img src="Bilder/Kolonne/kolonne3.jpg" alt="Kolonne Bild 3"></figure>
+      <figure><img src="Bilder/Kolonne/kolonne4.HEIC" alt="Kolonne Bild 4 (HEIC)"></figure>
+      <figure><img src="Bilder/Kolonne/kolonne5.jpg" alt="Kolonne Bild 5"></figure>
+      <figure><img src="Bilder/Kolonne/kolonne6.jpeg" alt="Kolonne Bild 6"></figure>
+    </div>
+    <p class="note">Hinweis: <code>kolonne4.HEIC</code> wird von vielen Browsern nicht angezeigt. Wenn du mir eine <strong>kolonne4.jpg</strong> (echtes JPEG) gibst, ersetze ich sie sofort.</p>
+
   </main>
   <footer>&copy; 2025 Freie Bühne Basel</footer>
 </body>
