@@ -1,71 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>#LoveU – Freie Bühne Basel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; background: #fff; color: #333; }
-    header { background: #000; padding: 20px; text-align: center; }
-    header a { display: inline-block; color: #fff; text-decoration: none; }
-    h1, h2 { font-family: 'Cinzel Decorative', cursive; color: goldenrod; text-align: center; }
-    p { max-width: 800px; margin: 10px auto; line-height: 1.6; }
-    .content { padding: 40px 20px; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 30px; max-width: 1000px; margin-left: auto; margin-right: auto; }
-    .gallery img { width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-    a { color: #333; text-decoration: none; }
-    a:hover { text-decoration: underline; color: goldenrod; }
-    footer { text-align: center; padding: 20px; background: #000; color: #fff; margin-top: 40px; }
-    .back { text-align:center; margin-top: 10px; }
-  
-/* back-link linksbündig im Header */
-header .back{display:inline-block;margin:0;color:#fff}
-header .back a{color:#fff;text-decoration:none}
-header{display:block;text-align:left}
-header h1, header .title{ text-align:center; }
-/* goldene Unterstreichung für Team-Links */
-a.gold-underline{ position:relative; text-decoration:none; color:inherit; }
-a.gold-underline::after{
-  content:""; position:absolute; left:0; right:0; bottom:-2px; height: 1px; opacity: 0.7; background:#D4AF37;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#LoveU – Galerie</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <header>
-    <a href="index.html">← Zurück zur Startseite</a>
-  </header>
+    <header>
+        <h1>#LoveU</h1>
+        <p>Spread Love, Not Hate</p>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../aktionen.html">Aktionen</a>
+            <a href="../loveu.html" class="active">#LoveU</a>
+            <a href="../support.html">Support</a>
+        </nav>
+    </header>
 
-  <div class="content">
-    <h1>#LoveU</h1>
+    <main>
+        <section>
+            <h2>Galerie</h2>
+            <div class="gallery">
+                <img src="bilder/loveu/loveu1.jpg" alt="#LoveU Bild 1">
+                <img src="bilder/loveu/loveu2.jpg" alt="#LoveU Bild 2">
+                <img src="bilder/loveu/loveu3.jpg" alt="#LoveU Bild 3">
+                <img src="bilder/loveu/loveu4.jpg" alt="#LoveU Bild 4">
+                <img src="bilder/loveu/loveu5.jpg" alt="#LoveU Bild 5">
+                <img src="bilder/loveu/loveu6.jpg" alt="#LoveU Bild 6">
+            </div>
+        </section>
+    </main>
 
-    <p>2023 präsentierte die Freie Bühne Basel im Theater Tabourettli Basel sowie Theater Bau 3 Basel an zwei Wochenenden das Stück «#LoveU» von Benjamin Zimber und Carolin Pfäffli.</p>
-
-    <p><strong>Inhalt:</strong><br>
-    Was geschieht mit Menschen, wenn sie abrupt aus ihrer gewohnten Lebenswelt gerissen werden?<br>
-    Larissa und Timo sind ein junges Influencer-Paar, das in einer glitzernden Social Media-Welt lebt. Ein totaler Stromausfall bringt sie in eine Lage, mit welcher sie noch nie konfrontiert waren – und zwingt sie zu neuen Perspektiven.<br>
-    In der sich nun präsentierenden, chaotischen Realität drängen sich neue Fragen auf: Wer sind sie wirklich, jenseits ihrer perfekt inszenierten Online-Existenz?<br>
-    Ein fesselndes Theaterstück, das auf humorvolle Art ganz neue, digitale und analoge Grenzen von Identität und Selbsterkenntnis erkundet und das von der Freien Bühne mit Augenzwinkern gerne als Social-Media-Drama bezeichnet wird.</p>
-
-    <h2>Besetzung</h2>
-    <p><strong>Larissa:</strong> <a href="https://www.instagram.com/carolin.pfaeffli.actress/" target="_blank" class="gold-underline">Carolin Pfäffli</a></p>
-    <p><strong>Timo:</strong> <a href="https://www.instagram.com/bennizimber/" target="_blank" class="gold-underline">Benjamin Zimber</a></p>
-
-    <h2>Team</h2>
-    <p><strong>Regie:</strong> <a href="https://www.instagram.com/jasmin_wenger_actress/" target="_blank" class="gold-underline">Jasmin Wenger</a></p>
-    <p><strong>Produktionsleitung:</strong> Haris Mujagic</p>
-
-    <h2>Galerie</h2>
-    <div class="gallery">
-      <img src="bilder/loveu/loveu1.jpg" alt="#LoveU Bild 1">
-      <img src="bilder/loveu/loveu2.jpg" alt="#LoveU Bild 2">
-      <img src="bilder/loveu/loveu3.jpg" alt="#LoveU Bild 3">
-    </div>
-
-    </div>
-
-  <footer>
-    <p>&copy; 2025 Freie Bühne Basel</p>
-  </footer>
+    <footer>
+        <p>© 2024 Love & Unity – Gemeinsam für mehr Liebe</p>
+    </footer>
 </body>
 </html>
