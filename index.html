@@ -21,7 +21,32 @@
     .mitglied { flex:1 1 250px; text-align:center; }
     .mitglied img { width:200px; height:200px; border-radius:50%; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.3); }
     .mitglied p { font-size:0.9rem; color:#333; max-width:250px; margin: 0.5rem auto 0; }
-  </style>
+  
+    .produktionen li {
+      margin-bottom: 1rem;
+    }
+    .produktionen .jahr {
+      color: #D4AF37;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .produktionen .titel {
+      color: #111;
+      text-decoration: none;
+      border-bottom: 1px solid #D4AF37;
+      padding-bottom: 2px;
+    }
+    .produktionen .titel:hover {
+      color: #D4AF37;
+    }
+
+    /* Extra spacing for readability */
+    p { margin: 1rem 0; }
+    h3 { margin-top: 2rem; }
+    h4 { margin-top: 1.5rem; }
+    ul { margin: 1rem 0 1.5rem 0; }
+    li { margin-bottom: 0.7rem; }
+</style>
 </head>
 <body>
   <header>
@@ -41,11 +66,24 @@
 
 <h3>TAGTRÄUMER</h3>
 <p>Mit William Mastrosimone’s <em>Tagträumer</em> bringen wir im Januar/Februar 2026 ein Stück auf die Bühne, das berührt, herausfordert und nachhallt. Die Geschichte von Rose und Cliff – zwei verlorenen Seelen zwischen Sehnsucht und Wirklichkeit – lädt das Publikum ein, in eine Welt voller Träume, Ängste und unerwarteter Begegnungen einzutauchen. Trotz seiner existenziellen Tiefe bietet das Stück auch humorvolle und zärtliche Momente, die das Theatererlebnis ausbalancieren.</p>
-<h4>Geplante Aufführungen</h4>
+
+<h4>Aufführungen</h4>
 <ul>
-  <li>Theater Bau 3 Basel vom <strong>30. Januar bis 8. Februar 2026</strong></li>
-  <li>Kunsthaus Interlaken am <strong>26. und 27. Februar 2026</strong></li>
+  <li><strong>Theater Bau 3 Basel</strong><br>
+    30. Januar 2026, 20:00<br>
+    31. Januar 2026, 20:00<br>
+    1. Februar 2026, 17:00<br>
+    5. Februar 2026, 20:00<br>
+    6. Februar 2026, 20:00<br>
+    7. Februar 2026, 20:00<br>
+    8. Februar 2026, 17:00
+  </li>
+  <li><strong>Kunsthaus Interlaken</strong><br>
+    27. Februar 2026, 20:00<br>
+    28. Februar 2026, 20:00
+  </li>
 </ul>
+
 <p><strong>Regie:</strong> Katja Balli<br>
 <strong>Spiel:</strong> Benjamin Zimber, Jasmin Wenger<br>
 <strong>Produktionsleitung:</strong> Carolin Pfäffli</p>
@@ -55,9 +93,15 @@
 <p>Dabei stellen wir vor allem die Frage in den Mittelpunkt, wie weit Kunst gehen darf. Ein besonderes Anliegen ist uns zudem das Thema Suchtprävention, denn der Konsum illegaler Substanzen und seine gesellschaftlichen Folgen zieht sich wie ein roter Faden durch Burroughs’ Werk.</p>
 <p><strong>Die Aufführungen sind für Herbst 2026 geplant.</strong></p>
 <h2>Produktionen</h2>
-    <ul>
-      <li><a href="kolonne.html">2025 „Die Dritte Kolonne“ von Franz Hohler</a></li>
-      <li><a href="loveu.html">2023 „#LoveU“ von Carolin Pfäffli und Benjamin Zimber</a></li>
+    <ul class="produktionen">
+      <li>
+        <span class="jahr">2025</span>
+        <a class="titel" href="kolonne.html">„Die Dritte Kolonne“ von Franz Hohler</a>
+      </li>
+      <li>
+        <span class="jahr">2023</span>
+        <a class="titel" href="loveu.html">„#LoveU“ von Carolin Pfäffli und Benjamin Zimber</a>
+      </li>
     </ul>
 
     <h2>Vorstand</h2>
