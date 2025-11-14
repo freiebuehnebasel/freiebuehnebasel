@@ -46,6 +46,33 @@
     h4 { margin-top: 1.5rem; }
     ul { margin: 1rem 0 1.5rem 0; }
     li { margin-bottom: 0.7rem; }
+
+    /* Hero Slider */
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      max-height: 420px;
+      overflow: hidden;
+    }
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .hero-slide img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-slide.active {
+      opacity: 1;
+    }
 </style>
 </head>
 <body>
@@ -53,6 +80,17 @@
     <h1>Freie Bühne Basel</h1>
     <p>Bewegendes Theater für alle</p>
   </header>
+  <div class="hero-slider">
+    <div class="hero-slide active"><img src="bilder/hero/hero1.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero2.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero3.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero4.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero5.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero6.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero7.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero8.jpg" alt=""></div>
+  </div>
+
   <main>
     <h2>Über uns</h2>
 
@@ -131,5 +169,18 @@
     <p>Schreibt uns gerne per <a href="mailto:freiebuehnebasel@gmail.com">E-Mail</a> oder folgt uns auf <a href="https://www.instagram.com/freie.buehne.basel/" target="_blank">Instagram</a>.</p>
   </main>
   <footer>&copy; 2025 Freie Bühne Basel</footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+
+    setInterval(() => {
+      if (!slides.length) return;
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+  </script>
+
 </body>
 </html>
