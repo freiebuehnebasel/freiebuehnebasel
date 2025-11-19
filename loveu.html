@@ -29,6 +29,34 @@ a.gold-underline{ position:relative; text-decoration:none; color:inherit; }
 a.gold-underline::after{
   content:""; position:absolute; left:0; right:0; bottom:-2px; height: 1px; opacity: 0.7; background:#D4AF37;
 }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 16px;
+      right: 24px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 300;
+    }
+
 </style>
 </head>
 <body>
@@ -56,13 +84,13 @@ a.gold-underline::after{
     <p><strong>Produktionsleitung:</strong> Haris Mujagic</p>
 
     <h2>Galerie</h2>
-    <div class="gallery">
-      <img src="bilder/loveu/loveu1.jpg" alt="#LoveU Bild 1">
-      <img src="bilder/loveu/loveu2.jpg" alt="#LoveU Bild 2">
-      <img src="bilder/loveu/loveu3.jpg" alt="#LoveU Bild 3">
-      <img src="bilder/loveu/loveu4.jpg" alt="#LoveU Bild 4">
-      <img src="bilder/loveu/loveu5.jpg" alt="#LoveU Bild 5">
-      <img src="bilder/loveu/loveu6.jpg" alt="#LoveU Bild 6">
+        <div class="gallery">
+      <img src="bilder/loveu/loveu1.jpg" alt="#LoveU Bild 1" data-full="bilder/loveu/loveu1.jpg" class="lightbox-thumb">
+      <img src="bilder/loveu/loveu2.jpg" alt="#LoveU Bild 2" data-full="bilder/loveu/loveu2.jpg" class="lightbox-thumb">
+      <img src="bilder/loveu/loveu3.jpg" alt="#LoveU Bild 3" data-full="bilder/loveu/loveu3.jpg" class="lightbox-thumb">
+      <img src="bilder/loveu/loveu4.jpg" alt="#LoveU Bild 4" data-full="bilder/loveu/loveu4.jpg" class="lightbox-thumb">
+      <img src="bilder/loveu/loveu5.jpg" alt="#LoveU Bild 5" data-full="bilder/loveu/loveu5.jpg" class="lightbox-thumb">
+      <img src="bilder/loveu/loveu6.jpg" alt="#LoveU Bild 6" data-full="bilder/loveu/loveu6.jpg" class="lightbox-thumb">
     </div>
 
     </div>
@@ -70,5 +98,47 @@ a.gold-underline::after{
   <footer>
     <p>&copy; 2025 Freie Bühne Basel</p>
   </footer>
+
+  <div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-image" src="" alt="Bild in Grossansicht">
+  </div>
+
+  <script>
+    (function() {
+      const thumbs = document.querySelectorAll('.lightbox-thumb');
+      const overlay = document.getElementById('lightbox');
+      const overlayImg = document.getElementById('lightbox-image');
+      const overlayClose = document.getElementById('lightbox-close');
+
+      if (!thumbs.length || !overlay || !overlayImg || !overlayClose) return;
+
+      thumbs.forEach(img => {
+        img.addEventListener('click', () => {
+          const src = img.getAttribute('data-full') || img.src;
+          overlayImg.src = src;
+          overlay.classList.add('open');
+        });
+      });
+
+      function closeOverlay() {
+        overlay.classList.remove('open');
+        overlayImg.src = "";
+      }
+
+      overlayClose.addEventListener('click', closeOverlay);
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          closeOverlay();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) {
+          closeOverlay();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
