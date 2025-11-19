@@ -39,6 +39,33 @@
       aspect-ratio: auto;
       object-fit: contain;
     }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .lightbox-overlay.open { display:flex; }
+    .lightbox-overlay img {
+      max-width:90vw;
+      max-height:90vh;
+      border-radius:8px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+    }
+    .lightbox-close{
+      position:fixed;
+      top:20px;
+      right:30px;
+      font-size:2rem;
+      color:white;
+      cursor:pointer;
+    }
+
 </style>
 </head>
 <body>
@@ -64,17 +91,47 @@
     <p><strong>Produktionsleitung:</strong> <a class="name" href="https://www.instagram.com/bennizimber/" target="_blank">Benjamin Zimber</a></p>
 
     <!-- Direkt die Galerie ohne Überschrift -->
+    
     <div class="gallery">
-      <img src="bilder/kolonne/kolonne1.jpg" alt="Die Dritte Kolonne Bild 1">
-      <img src="bilder/kolonne/kolonne2.jpg" alt="Die Dritte Kolonne Bild 2">
-      <img src="bilder/kolonne/kolonne3.jpg" alt="Die Dritte Kolonne Bild 3">
-      <img src="bilder/kolonne/kolonne6.jpg" alt="Die Dritte Kolonne Bild 6">
-      <img src="bilder/kolonne/kolonne5.jpg" alt="Die Dritte Kolonne Bild 5" class="tall">
+      <img src="bilder/kolonne/kolonne1.jpg" data-full="bilder/kolonne/kolonne1.jpg" class="lightbox-thumb" alt="Bild 1">
+      <img src="bilder/kolonne/kolonne2.jpg" data-full="bilder/kolonne/kolonne2.jpg" class="lightbox-thumb" alt="Bild 2">
+      <img src="bilder/kolonne/kolonne3.jpg" data-full="bilder/kolonne/kolonne3.jpg" class="lightbox-thumb" alt="Bild 3">
+      <img src="bilder/kolonne/kolonne6.jpg" data-full="bilder/kolonne/kolonne6.jpg" class="lightbox-thumb" alt="Bild 6">
+      <img src="bilder/kolonne/kolonne5.jpg" data-full="bilder/kolonne/kolonne5.jpg" class="tall lightbox-thumb" alt="Bild 5">
     </div>
+
   </main>
 
   <footer>
     &copy; 2025 Freie Bühne Basel
   </footer>
+
+  <div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-image" src="">
+  </div>
+
+  <script>
+    const thumbs = document.querySelectorAll('.lightbox-thumb');
+    const overlayBox = document.getElementById('lightbox');
+    const overlayImg = document.getElementById('lightbox-image');
+    const overlayClose = document.getElementById('lightbox-close');
+
+    thumbs.forEach(t => {
+      t.addEventListener('click', () => {
+        overlayImg.src = t.dataset.full;
+        overlayBox.classList.add('open');
+      });
+    });
+
+    overlayClose.addEventListener('click', ()=> overlayBox.classList.remove('open'));
+    overlayBox.addEventListener('click', (e)=>{
+      if(e.target === overlayBox){ overlayBox.classList.remove('open'); }
+    });
+    document.addEventListener('keydown', e=>{
+      if(e.key==="Escape"){ overlayBox.classList.remove('open'); }
+    });
+  </script>
+
 </body>
 </html>
