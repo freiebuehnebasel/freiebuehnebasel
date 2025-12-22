@@ -72,6 +72,38 @@
     .hero-slide.active {
       opacity: 1;
     }
+
+    /* Aktuell: Aufführungen + Plakat */
+    .aktuell-layout{
+      display:flex;
+      gap:2rem;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-top: 0.5rem;
+    }
+    .aktuell-layout .auffuehrungen-block{
+      flex: 1 1 420px;
+      min-width: 280px;
+    }
+    .aktuell-layout .plakat-block{
+      flex: 0 0 260px;
+      max-width: 300px;
+    }
+    .aktuell-layout .plakat-block img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    @media (max-width: 820px){
+      .aktuell-layout{
+        gap:1.25rem;
+      }
+      .aktuell-layout .plakat-block{
+        flex: 1 1 280px;
+        max-width: 420px;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -105,7 +137,7 @@
 <p>Mit William Mastrosimone’s <em>Tagträumer</em> bringen wir im Januar/Februar 2026 ein Stück auf die Bühne, das berührt, herausfordert und nachhallt. Die Geschichte von Rose und Cliff – zwei verlorenen Seelen zwischen Sehnsucht und Wirklichkeit – lädt das Publikum ein, in eine Welt voller Träume, Ängste und unerwarteter Begegnungen einzutauchen. Trotz seiner existenziellen Tiefe bietet das Stück auch humorvolle und zärtliche Momente, die das Theatererlebnis ausbalancieren.</p>
 
 <h4>Aufführungen</h4>
-<ul>
+<div class="aktuell-layout"><div class="auffuehrungen-block"><ul>
   <li>
     <strong>Theater Bau 3 Basel</strong><br>
     Dornacherstrasse 192<br>
@@ -125,7 +157,7 @@
     Fr 27. Februar 2026, 20:00<br>
     Sa 28. Februar 2026, 20:00
   </li>
-</ul>
+</ul></div><div class="plakat-block"><img src="bilder/aktuell/tagtraumer.jpg" alt="Plakat Tagträumer – Freie Bühne Basel" loading="lazy"></div></div>
 
 <p><strong>Regie:</strong> <a href="https://www.instagram.com/katijaballi/?hl=de" target="_blank" rel="noopener" style="color:#000; text-decoration:underline; text-decoration-color:#D4AF37;">Katja Balli</a><br>
 <strong>Spiel:</strong> <a href="https://www.instagram.com/bennizimber/" target="_blank" rel="noopener" style="color:#000; text-decoration:underline; text-decoration-color:#D4AF37;">Benjamin Zimber</a>, <a href="https://www.instagram.com/jasmin_wenger_actress/" target="_blank" rel="noopener" style="color:#000; text-decoration:underline; text-decoration-color:#D4AF37;">Jasmin Wenger</a><br>
