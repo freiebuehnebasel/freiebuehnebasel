@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presse – Freie Bühne Basel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --text: #111;
+      --muted: #666;
+      --bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    header h1 {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 2.3rem;
+      margin: 0;
+      color: var(--gold);
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover {
+      border-bottom-color: var(--gold);
+    }
+
+    nav a.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.75rem 3rem;
+    }
+
+    h2 {
+      font-family: 'Cinzel Decorative', cursive;
+      color: var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.3rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: 'Cinzel Decorative', cursive;
+      color: var(--gold);
+      margin-top: 1.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    h4 {
+      margin-top: 1.25rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0.55rem 0;
+    }
+
+    .intro{font-size:1rem;}
+
+    .pill {
+      display: inline-block;
+      padding: 0.12rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.12);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: flex-start;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-top: 1rem;
+      background: #fafafa;
+    }
+
+    .card h4 {
+      margin-top: 0;
+    }
+
+    .download-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.2rem 0 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .download-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 999px;
+      padding: 0.1rem 0.6rem;
+      border: 1px solid rgba(0,0,0,0.12);
+      color: var(--muted);
+      margin-right: 0.4rem;
+    }
+
+    .produktions-block {
+      border-left:none;
+      padding-left: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .produktions-block h3 {
+      margin-top: 0;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .kontakt-block {
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 2rem 1rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      margin-top: 1.5rem;
+    }
+  
+    /* Dünner Top-Bar wie bei euren Unterseiten */
+    .topbar{
+      background:#000;
+      padding:.65rem 1rem;
+    }
+    .topbar-inner{
+      max-width: 1000px;
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+    }
+    .topbar a{
+      color:#fff;
+      text-decoration:none;
+      font-size:0.95rem;
+    }
+    .topbar a:hover{
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </div>
+
+<main>
+<h2>Pressebereich</h2>
+    <p class="intro">
+      In unserem Pressebereich finden Sie kompaktes Material zur Freien Bühne Basel
+      sowie zu unseren aktuellen Produktionen. Alle Texte und Dateien dürfen für
+      Berichterstattung, Programmhefte und Ankündigungen im Zusammenhang mit unseren
+      Produktionen verwendet werden. Bei Fragen oder Interviewanfragen stehen wir
+      jederzeit gerne zur Verfügung.
+    </p>
+
+    <div class="grid">
+      <section>
+        
+    <div class="section-title" style="color:var(--gold); font-family:'Cinzel Decorative', cursive; border-bottom:2px solid var(--gold); font-size:1.55rem;">Freie Bühne Basel</div>
+
+<h3>Theaterkollektiv – Kurzfassung</h3>
+        <p>
+          Die Freie Bühne Basel ist ein junger Theaterverein, der bewegendes und anspruchsvolles Theater für alle erlebbar macht. Als Ort der Begegnung und des Austauschs versteht das Ensemble Theater als grundlegenden Bestandteil des gesellschaftlichen Lebens, der Dialog ermöglicht und gemeinsame Erfahrungen schafft.
+        </p>
+
+        <h3>Theaterkollektiv – Langfassung</h3>
+
+<p>
+Die Freie Bühne Basel ist ein junges Theaterkollektiv, das bewegendes und anspruchsvolles Theater für alle erlebbar macht.
+Das Ensemble versteht Theater als Ort der Begegnung und des Austauschs, an dem Kunst Menschen zusammenführt und zum Dialog anregt.
+</p>
+<p>
+Im September 2023 brachte die Freie Bühne Basel mit #LoveU ihre erste Eigenproduktion auf die Bühne.
+Das Stück war ein grosser Erfolg und berührte das Publikum nachhaltig.
+Mit der Inszenierung von Franz Hohlers Die Dritte Kolonne im Februar 2025 gelang es dem Verein,
+sowohl das Publikum als auch den Autor selbst zu überzeugen.
+</p>
+<p>
+Die Freie Bühne Basel ist ein leidenschaftliches und kreatives Team erfahrener Theaterleute aus den Bereichen Regie und Schauspiel.
+Mit Tagträumer möchte das Ensemble ein intensives und bewegendes Theatererlebnis schaffen.
+Dabei ist die Arbeit von der Überzeugung getragen, dass Kunst und Kultur eine essenzielle Rolle in der Gesellschaft spielen
+und einen nachhaltigen, inspirierenden Beitrag leisten können.
+</p>
+
+        <p>
+
+        </p>
+
+
+    <div class="card">
+      <h3 style="font-family: Inter, sans-serif; color:#000; font-weight:600;">Texte als Download</h3>
+      <ul class="download-list">
+        <li class="download-item"><div class="dl-icon" style="color:#000;">↓</div>
+          <div class="dl-meta">
+            <a href="presse/kurzfassung.pdf" target="_blank">Kurzfassung (PDF)</a>
+          </div>
+        </li>
+        <li class="download-item"><div class="dl-icon" style="color:#000;">↓</div>
+          <div class="dl-meta">
+            <a href="presse/langfassung.pdf" target="_blank">Langfassung (PDF)</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+</div>
+
+        <div class="card">
+          <h3 style="font-family: Inter, sans-serif; color:#000; font-weight:600;">Logos &amp; Bildmaterial</h3>
+      <h4>Logo</h4>
+      <p>
+        Wir sind derzeit dabei, ein neues Logo zu finalisieren. Dieses wird hier so bald wie möglich zur Verfügung gestellt.
+      </p>
+
+
+        <h4>Pressebilder</h4>
+      <p>Die aktuellen Pressebilder sind derzeit noch nicht verfügbar und werden hier in Kürze ergänzt.</p>
+</div>
+
+      </section>
+</div>
+
+    <h2>Aktuelle Produktion</h2>
+
+    <section class="produktions-block">
+      
+      <h3>TAGTRÄUMER</h3>
+      <p class="tagline">von William Mastrosimone – Premiere 2026</p>
+<h3 style="color:var(--gold); font-family: Cinzel Decorative, cursive;">Tagträumer – Kurzfassung</h3>
+<p>
+Mit <em>Tagträumer</em> führt die Freie Bühne Basel ein Theaterstück auf, das berührt, herausfordert und nachhallt.
+Die Geschichte von zwei verlorenen Seelen zwischen Sehnsucht und Wirklichkeit lädt das Publikum ein,
+in eine Welt voller Träume, Ängste und unerwarteter Begegnungen einzutauchen.
+Trotz seiner existenziellen Tiefe bietet das Stück auch humorvolle und zärtliche Momente,
+die das Theatererlebnis ausbalancieren.
+</p>
+
+<h3 style="color:var(--gold); font-family: Cinzel Decorative, cursive;">Tagträumer – Langfassung</h3>
+
+<p>
+<em>Tagträumer</em> ist ein intensives Zwei-Personen-Stück über Einsamkeit, Sehnsucht und die verzweifelte Suche nach Verbindung.
+Im Mittelpunkt stehen Rose, eine verträumte junge Frau, die sich vor der harten Realität in ihre Fantasiewelt flüchtet,
+und Cliff, ein vom Leben gezeichneter Trucker, der eher mit Tatsachen als mit Träumen umzugehen weiss.
+</p>
+<p>
+Während Rose von toten Wellensittichen, blutroten Sonnenuntergängen und perfekten Liebesgeschichten erzählt,
+versucht Cliff, sie mit der Realität in Einklang zu bringen – und scheitert grandios,
+was zu sehr unterhaltsamen und humorvollen Missverständnissen führt.
+</p>
+<p>
+Es ist ein Theaterstück, das auf eindrucksvolle Weise die tiefen emotionalen und psychologischen Aspekte
+des menschlichen Daseins beleuchtet. In einer Zeit, in der immer mehr Menschen mit Einsamkeit und dem Gefühl
+der Verlorenheit konfrontiert werden, bietet es eine wichtige und dringliche Reflexion über die Suche nach
+Zugehörigkeit, Selbstverwirklichung und menschlicher Verbundenheit.
+</p>
+
+<div class="card" style="margin-top:1.5rem;">
+      <h3 style="font-family: Inter, sans-serif; color:#000; font-weight:600;">Downloads</h3>
+      <ul class="download-list">
+        <li class="download-item">
+          <div class="dl-icon" style="color:#000;">↓</div>
+          <div class="dl-meta">
+            <a href="presse/kurzfassung.pdf" target="_blank">Tagträumer – Kurzfassung (PDF)</a>
+          </div>
+        </li>
+        <li class="download-item">
+          <div class="dl-icon" style="color:#000;">↓</div>
+          <div class="dl-meta">
+            <a href="presse/langfassung.pdf" target="_blank">Tagträumer – Langfassung (PDF)</a>
+          </div>
+        </li>
+        <li class="download-item">
+          <div class="dl-icon" style="color:#000;">↓</div>
+          <div class="dl-meta">
+            <span>Pressebilder (folgen in Kürze)</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+<div style="height:2.5rem;"></div>
+<div class="section-title" style="color:var(--gold); font-family:'Cinzel Decorative', cursive; border-bottom:2px solid var(--gold); font-size:1.55rem;">Pressekontakt</div>
+      <p>
+        Für Medienanfragen, Interviewwünsche, Bildmaterial und Dossiers wenden Sie sich
+        gerne an:
+      </p>
+      <p>
+        <strong>Freie Bühne Basel</strong><br>
+        E-Mail: <a href="mailto:freiebuehnebasel@gmail.com">freiebuehnebasel@gmail.com</a><br>
+        Instagram: <a href="https://www.instagram.com/freie.buehne.basel/" target="_blank">@freie.buehne.basel</a>
+      </p>
+      <p class="muted">
+        Auf Anfrage senden wir Ihnen gerne zusätzlich technische Datenblätter zu unseren
+        Produktionen (Bühnenmaße, Licht- und Tonanforderungen, Aufbauzeiten).
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Freie Bühne Basel – Presse &amp; Medien
+  </footer>
+</body>
+</html>
