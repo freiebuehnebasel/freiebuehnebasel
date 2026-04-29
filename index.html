@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freie Bühne Basel</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=FjDSxSGU2x-Z923saOD0qDyRl2O3XsmP0ZsWIB1te_XnI_8dUlNJqVaL6TUvvWjd4ER8_2FkVR7jXVNcW7pWL9kJv3nHmBczek0a8_mbrcxLfBNu9-mRE7uh5T2-uts0f6a6rXypjtGBzkiHO53hdxYJYcCd1RTJGZiYua7KCnEsqK-GwfKnUY6HwhYm6RTKzOJtX4ytghwQ152sVk9veJUxZM4D2YgFuQsRdHLc90UHLCo9E9vBFxwTM72QOSNJT8JTAfC7Xxodn4s-YXokag" charset="UTF-8"></script><style>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=pf7VmlJTYcU2wzDT1OgOnmr766-0MfNVvvoybn6Su3-gtYPCL2AjatdSsn59Y5qsgkiXD3Chka4lW31NXiSbw9eRKnwGUBVtppua23UC4_VysMwXyiD6ZDIeU6JFGV68DnRj1gfRAGUJdisijnjYs-S2Zo_onIXgvNRhrbKaQvwH0w8zXQSwBPtuvZ51xYNQ06r7eToCJ9JroGl0-OPF7eaTJxCFZ4_PZ9uGQZVIwPfCMISZbjfjtMSmDWb8j2LcFzBHWp6_UJlPxQmsY1anAA" charset="UTF-8"></script><style>
     body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
     header { background:#000; color:white; padding:4rem 2rem; text-align:center; }
     header h1 { font-family: 'Cinzel Decorative', cursive; font-size:3rem; margin:0; color:#D4AF37; }
@@ -16,33 +16,251 @@
     li { margin-bottom:1rem; }
     a { color:#D4AF37; text-decoration:none; }
     footer { text-align:center; font-size:0.9rem; color:#666; padding:2rem; }
+    /* Vorstand-Grid */
+    .vorstand { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
+    .mitglied { flex:1 1 250px; text-align:center; }
+    .mitglied img { width:200px; height:200px; border-radius:50%; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.3); }
+    .mitglied p { font-size:0.9rem; color:#333; max-width:250px; margin: 0.5rem auto 0; }
+  
+    .produktionen li {
+      margin-bottom: 1rem;
+    }
+    .produktionen .jahr {
+      color: #D4AF37;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .produktionen .titel {
+      color: #111;
+      text-decoration: none;
+      border-bottom: 1px solid #D4AF37;
+      padding-bottom: 2px;
+    }
+    .produktionen .titel:hover {
+      color: #D4AF37;
+    }
 
-    .hero-slider { position: relative; width: 100%; height: 500px; overflow: hidden; background:#fff; margin-top: 1.5rem; }
-    .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; }
-    .hero-slide img { width: 100%; height: 100%; object-fit: contain; display: block; }
-    .hero-slide.active { opacity: 1; }
-  </style>
+    /* Extra spacing for readability */
+    p { margin: 1rem 0; }
+    h3 { margin-top: 2rem; }
+    h4 { margin-top: 1.5rem; }
+    ul { margin: 1rem 0 1.5rem 0; }
+    li { margin-bottom: 0.7rem; }
+
+    /* Hero Slider */
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      max-height: 500px;
+      overflow: hidden;
+      background:#fff;  /* Slider jetzt auf Weiss */
+      margin-top: 1.5rem; /* kleiner Abstand unter dem schwarzen Balken */
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    /* Aktuell: Aufführungen + Plakat */
+    .aktuell-layout{
+      display:flex;
+      gap:2rem;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-top: 0.5rem;
+    }
+    .aktuell-layout .auffuehrungen-block{
+      flex: 1 1 420px;
+      min-width: 280px;
+    }
+    .aktuell-layout .plakat-block{
+      flex: 0 0 320px;
+      max-width: 360px;
+    }
+    .aktuell-layout .plakat-block img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    @media (max-width: 820px){
+      .aktuell-layout{
+        gap:1.25rem;
+      }
+      .aktuell-layout .plakat-block{
+        flex: 1 1 280px;
+        max-width: 420px;
+      }
+    }
+
+
+    /* Name links in Aktuell */
+    .name-link {
+      color:#000;
+      text-decoration: underline;
+      text-decoration-color:#D4AF37;
+    }
+    .name-link:hover {
+      color:#D4AF37;
+    }
+
+    .eventfrog-link {
+      color:#D4AF37;
+      text-decoration:none;
+      font-weight:500;
+    }
+
+</style>
 </head>
 <body>
   <header>
     <h1>Freie Bühne Basel</h1>
     <p>Bewegendes Theater für alle</p>
   </header>
-
   <div class="hero-slider">
     <div class="hero-slide active"><img src="bilder/hero/hero1.jpg" alt=""></div>
     <div class="hero-slide"><img src="bilder/hero/hero2.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero3.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero4.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero5.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero6.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero7.jpg" alt=""></div>
+    <div class="hero-slide"><img src="bilder/hero/hero8.jpg" alt=""></div>
   </div>
 
   <main>
     <h2>Über uns</h2>
-    <p>Die Freie Bühne Basel ist ein junger Theaterverein.</p>
-  </main>
 
+<p>Die Freie Bühne Basel ist ein junger Theaterverein, der bewegendes und anspruchsvolles Theater für alle erlebbar macht. Wir verstehen das Theater als einen Ort der Begegnung und des Austauschs, an dem Kunst Menschen zusammenführt und zum Dialog anregt.</p>
+<p>Im September 2023 haben wir mit <em>#LoveU</em> unsere erste Eigenproduktion auf die Bühne gebracht. Das Stück war ein grosser Erfolg und hat das Publikum nachhaltig berührt.</p>
+<p>Mit der Inszenierung von Franz Hohlers <em>Die Dritte Kolonne</em> im Februar 2025 gelang es der Freien Bühne Basel sowohl das Publikum als auch den Autor selbst zu überzeugen. Besonders gefreut hat uns sein persönliches Lob für unsere Inszenierung, das er uns anlässlich seines Besuchs im Theater Bau3 aussprach – eine grosse Ehre für unser Ensemble.</p>
+<p>Mit grossem Elan und Begeisterung arbeiten wir daran, jährlich mindestens eine Produktion auf die Bühne zu bringen, denn wir sind überzeugt, dass Kultur zur Grundversorgung einer Gesellschaft gehört.</p>
+
+
+<h2>Aktuell</h2>
+
+
+<h3>TAGTRÄUMER</h3>
+
+<p>Mit William Mastrosimone’s Tagträumer bringen wir 2026 ein Stück auf die Bühne, das berührt, herausfordert und nachhallt. Die Geschichte von Rose und Cliff – zwei verlorenen Seelen zwischen Sehnsucht und Wirklichkeit – lädt das Publikum ein, in eine Welt voller Träume, Ängste und unerwarteter Begegnungen einzutauchen. Trotz seiner existenziellen Tiefe bietet das Stück auch humorvolle und zärtliche Momente, die das Theatererlebnis ausbalancieren.</p>
+
+<p>Die Aufführungen in Basel und Interlaken im vergangenen Februar waren ein grosser Erfolg. Nun befinden wir uns in der Planungs und Finanzierungsphase für die Auftritte in Berlin.</p>
+
+<h4>Aufführungen:</h4>
+<div class="aktuell-layout">
+  <div class="auffuehrungen-block">
+    <p>
+    <strong>Brotfabrik Berlin</strong><br>
+    Caligaripl. 1<br>
+    13086 Berlin<br>
+    Deutschland<br><br>
+    Do 19. November 2026<br>
+    Fr 20. November 2026<br>
+    Sa 21. November 2026
+    </p>
+  </div>
+
+  <div class="plakat-block">
+    <img src="bilder/aktuell/tagtraumer.png" alt="Plakat Tagträumer – Freie Bühne Basel" loading="lazy">
+  </div>
+</div>
+<p>
+<strong>Regie:</strong>
+<a href="https://www.instagram.com/katijaballi/" target="_blank" rel="noopener" class="name-link">Katja Balli</a><br>
+<strong>Spiel:</strong>
+<a href="https://www.instagram.com/bennizimber/" target="_blank" rel="noopener" class="name-link">Benjamin Zimber</a>,
+<a href="https://www.instagram.com/jasmin_wenger_actress/" target="_blank" rel="noopener" class="name-link">Jasmin Wenger</a><br>
+<strong>Produktionsleitung:</strong>
+<a href="https://www.instagram.com/carolin.pfaeffli.actress/" target="_blank" rel="noopener" class="name-link">Carolin Pfäffli</a>
+</p>
+
+<p>Tickets erhältlich auf <a href="https://eventfrog.ch/de/p/gruppen/tagtraeumer-von-william-mastrosimone-7396915239164375685.html" target="_blank" rel="noopener" class="eventfrog-link">Eventfrog</a>.</p>
+
+<h3>LESUNG WILLIAM S. BURROUGHS</h3>
+
+<p>Mit ausgewählten Texten von William S. Burroughs, einem der bedeutendsten Autoren der amerikanischen Beat Generation, gestalten wir einen intensiven Leseabend. Die Zuhörerinnen und Zuhörer werden mitgenommen auf eine Reise ins Amerika der Fünfzigerjahre – eine ganz andere Welt als die, die uns hier vertraut ist. Und doch lassen sich viele Parallelen erkennen, aus denen wir einiges lernen können.</p>
+
+<p>Dabei stellen wir vor allem die Frage in den Mittelpunkt, wie weit Kunst gehen darf. Ein besonderes Anliegen ist uns zudem das Thema Suchtprävention, denn der Konsum illegaler Substanzen und seine gesellschaftlichen Folgen zieht sich wie ein roter Faden durch Burroughs’ Werk.</p>
+
+<p><strong>Die Aufführungen sind für Anfang 2027 geplant.</strong></p>
+<h2>Produktionen</h2>
+    <ul class="produktionen">
+      <li>
+        <span class="jahr">2025</span>
+        <a class="titel" href="kolonne.html">„Die Dritte Kolonne“ von Franz Hohler</a>
+      </li>
+      <li>
+        <span class="jahr">2023</span>
+        <a class="titel" href="loveu.html">„#LoveU“ von Carolin Pfäffli und Benjamin Zimber</a>
+      </li>
+    </ul>
+
+    <h2>Vorstand</h2>
+
+<div class="vorstand">
+  <div class="mitglied">
+    <img src="bilder/vorstand/carolin.jpg" alt="Carolin Pfäffli">
+    <h3>Carolin Pfäffli</h3>
+    <p>Präsidentin – Schauspielerin &amp; Regisseurin</p>
+    <p>Caro’s Arbeit als Schauspielerin, Regisseurin und Produktionsleiterin verbindet künstlerische Kreativität mit organisatorischem Geschick. Als Präsidentin der Freien Bühne Basel bringt sie wertvolle Leitungserfahrung mit und sorgt für einen reibungslosen Ablauf.</p>
+  </div>
+  <div class="mitglied">
+    <img src="bilder/vorstand/anja.jpg" alt="Anja Schlegel">
+    <h3>Anja Schlegel</h3>
+    <p>Vizepräsidentin – Schauspielerin</p>
+    <p>Anja ist seit ihrem Abschluss an der Schauspielschule Basel als freischaffende Schauspielerin tätig. Mit ihrer Leidenschaft für vielfältige Theater- und Kunstprojekte ist sie eine inspirierende Bereicherung für den Verein. Als Vizepräsidentin und Aktuarin der Freien Bühne Basel ist sie mit vollem Engagement dabei.</p>
+  </div>
+  <div class="mitglied">
+    <img src="bilder/vorstand/benjamin.jpg" alt="Benjamin Zimber">
+    <h3>Benjamin Zimber</h3>
+    <p>Kassier – Schauspieler &amp; Autor</p>
+    <p>Benjamin bringt langjährige Erfahrung als Schauspieler und Bühnenkämpfer mit. Von Strassentheater bis Musical erweckt er facettenreiche Charaktere zum Leben. Wenn er nicht auf der Bühne steht, arbeitet er als Landwirt und Pädagoge.</p>
+  </div>
+</div>
+
+
+    
+<h2>Pressebereich</h2>
+<p>
+  Journalistinnen und Journalisten, die Informationen für ihre Berichterstattung benötigen,
+  finden im
+  <a href="presse.html" style="color:#D4AF37; font-weight:500; text-decoration:none;">
+    Pressebereich
+  </a>
+  alle relevanten Texte und Materialien.
+</p>
+
+
+<h2>Mitglied werden</h2>
+    <p>
+      Die Freie Bühne Basel ist ein Kollektiv für professionelle Bühnenkünstlerinnen und Bühnenkünstler. Darüber hinaus freuen wir uns auch über tatkräftige Unterstützung in den Bereichen Bühnenbau, Technik oder Requisite.
+    </p>
+    <p>
+      Es besteht die Möglichkeit, dem Verein als <strong>Aktivmitglied</strong>, <strong>Passivmitglied</strong> oder <strong>Gönner:in</strong> beizutreten.
+    </p>
+    <p>
+      Bei Interesse oder Fragen zur Mitgliedschaft freuen wir uns über eine
+      <a href="mailto:freiebuehnebasel@gmail.com" style="color:#D4AF37; text-decoration:none;">E-Mail</a>.
+    </p>
+
+
+<h2>Kontakt</h2>
+    <p>Schreibt uns gerne per <a href="mailto:freiebuehnebasel@gmail.com">E-Mail</a> oder folgt uns auf <a href="https://www.instagram.com/freie.buehne.basel/" target="_blank">Instagram</a>.</p>
+  </main>
   <footer>&copy; 2025 Freie Bühne Basel</footer>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
 
@@ -52,7 +270,6 @@
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
     }, 5000);
-  });
   </script>
 
 </body>
