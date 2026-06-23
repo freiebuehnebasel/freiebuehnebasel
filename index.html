@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freie Bühne Basel</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=7kOMxFejs4lVfSr6g0oKY2NoWXJzlwiA6pTVT_9T_pWS_VAx1AnGqxbxn_xEc_IqAiURn2eHELiSNAvecGSvNb-hyPA_WRNE9cPoEZUxt95cg3_goYb81Vyb0Ghkz8XrjTaqeJ7jzbCgpvJphIjSTUttAJ2OgLsFX4s0-FaHjrVVsV4WdiwjEuS_j2hWfUApSfDximyRw8YxXkeKduO3hITXNC-HU6NcAmlkLKGdb5iqLA-N0mVxg2beqZfwqL6fDtGS1pR2thGaFEVWeQoIeA" charset="UTF-8"></script><style>
+  <style>
     body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
     header { background:#000; color:white; padding:4rem 2rem; text-align:center; }
     header h1 { font-family: 'Cinzel Decorative', cursive; font-size:3rem; margin:0; color:#D4AF37; }
@@ -149,32 +149,54 @@
 
 
 <h2>Aktuell</h2>
-
+<p>Zurzeit befinden wir uns in der Planungs- und Finanzierungsphase für gleich zwei Projekte.</p>
 
 <h3>TAGTRÄUMER</h3>
 
-<p>Mit William Mastrosimone’s Tagträumer bringen wir 2026 ein Stück auf die Bühne, das berührt, herausfordert und nachhallt. Die Geschichte von Rose und Cliff – zwei verlorenen Seelen zwischen Sehnsucht und Wirklichkeit – lädt das Publikum ein, in eine Welt voller Träume, Ängste und unerwarteter Begegnungen einzutauchen. Trotz seiner existenziellen Tiefe bietet das Stück auch humorvolle und zärtliche Momente, die das Theatererlebnis ausbalancieren.</p>
+<p>Mit William Mastrosimone’s Tagträumer bringen wir im Januar/Februar 2026 ein Stück auf die Bühne, das berührt, herausfordert und nachhallt. Die Geschichte von Rose und Cliff – zwei verlorenen Seelen zwischen Sehnsucht und Wirklichkeit – lädt das Publikum ein, in eine Welt voller Träume, Ängste und unerwarteter Begegnungen einzutauchen. Trotz seiner existenziellen Tiefe bietet das Stück auch humorvolle und zärtliche Momente, die das Theatererlebnis ausbalancieren.</p>
 
-<p>Die Aufführungen in Basel und Interlaken im vergangenen Februar waren ein grosser Erfolg. Nun befinden wir uns in der Planungs und Finanzierungsphase für die Auftritte in Berlin.</p>
-
-<h4>Aufführungen:</h4>
+<h4>Aufführungen</h4>
 <div class="aktuell-layout">
   <div class="auffuehrungen-block">
-    <p>
-    <strong>Brotfabrik Berlin</strong><br>
-    Caligaripl. 1<br>
-    13086 Berlin<br>
-    Deutschland<br><br>
-    Do 19. November 2026<br>
-    Fr 20. November 2026<br>
-    Sa 21. November 2026
-    </p>
+    <ul>
+      <li>
+        <strong>Theater Bau 3 Basel</strong><br>
+        Dornacherstrasse 192<br>
+        4053 Basel<br><br>
+        Fr 30. Januar 2026&nbsp;&nbsp;20:00<br>
+        Sa 31. Januar 2026&nbsp;&nbsp;20:00<br>
+        So 01. Februar 2026&nbsp;&nbsp;17:00<br>
+        Do 05. Februar 2026&nbsp;&nbsp;20:00<br>
+        Fr 06. Februar 2006&nbsp;&nbsp;20:00<br>
+        Sa 07. Februar 2026&nbsp;&nbsp;20:00<br>
+        So 08. Februar 2026&nbsp;&nbsp;17:00
+      </li>
+
+      <li style="margin-top:0.75rem;">
+        <strong>Kunsthaus Interlaken</strong><br>
+        Jungfraustrasse 55<br>
+        3800 Interlaken<br><br>
+        Sa 28. Februar 2026&nbsp;&nbsp;20:00<br>
+        So 01. März 2026&nbsp;&nbsp;17:00
+      </li>
+
+      <li style="margin-top:0.75rem;">
+        <strong>Brotfabrik Berlin</strong><br>
+        Caligaripl. 1<br>
+        13086 Berlin<br>
+        Deutschland<br><br>
+        Do 19. November 2026<br>
+        Fr 20. November 2026<br>
+        Sa 21. November 2026
+      </li>
+    </ul>
   </div>
 
   <div class="plakat-block">
     <img src="bilder/aktuell/tagtraumer.png" alt="Plakat Tagträumer – Freie Bühne Basel" loading="lazy">
   </div>
 </div>
+
 <p>
 <strong>Regie:</strong>
 <a href="https://www.instagram.com/katijaballi/" target="_blank" rel="noopener" class="name-link">Katja Balli</a><br>
@@ -261,19 +283,16 @@
   <footer>&copy; 2025 Freie Bühne Basel</footer>
 
   <script>
-document.addEventListener("DOMContentLoaded", function () {
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
 
-  if (!slides.length) return;
-
-  setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }, 5000);
-});
-</script>
+    setInterval(() => {
+      if (!slides.length) return;
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+  </script>
 
 </body>
 </html>
