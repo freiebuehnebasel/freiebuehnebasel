@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freie Bühne Basel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet"><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=eAIScyBjjqND8nb3szv07YwyWe5SVVi56dpB_AJ7iw3TKB3_o7TrxW-4tJxUcCvHapFcwtio08I7WJ9VCxStkc5xTtiQQbEwP39R46Y7_PlC6bmfOdkTQiHIsiiLEQrMvrhw4jXUUGiyMw_2UaZVJMmGeqWZmeR2B47nbKcCQdk-J86ZuGMMBaapmL0K94sNUK0o1xYhUCq4hQbSRp7PHwFjWV2autThAv7QDisf8JPJM4kijS-r8YA2xBFbT0gsVir1g7BPTGTiE5KR4M4Jg2yTUWVqWQOW399udJ63aRIA21eOWkJKH3o7UTAWNxAjM0w4i6_UwTwfBYJPcaj7Ww" charset="UTF-8"></script><style>
-    body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
+  <title>Freie Bühne Basel</title><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=jAyHvuXbwQuVFdyex1CGhp6DUMWwv98UUOWAGkqsnMU1CcGaMGD-pnjzKMEtPhJm4aqoaDcETqRF20nn-gSX-trL-5_smxqiS8aZR7u8MWymPOigONkZ90k-ZpNEk1o-fPyrnhVnf3RtK9oYfR1n7wm1phKuVGZMteqtFsC5nwWTccTgTPhgLcc3yK5WefvsipvnG0l39R04niiFgsE-He9W6mCv62PF9LkzKH9LkwnW9EiAXt0bVdKQW-mn0VqkiJIVFzmF3nqyokWjjTjSGR_UQ2HxWD9xtrDlJLDa1ntQUAStKajQHzXMmN1T7AK8YSHbl0p0HRBIviG5vPMtlA" charset="UTF-8"></script><style>
+    body { font-family: Arial, Helvetica, sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
     header { background:#000; color:white; padding:4rem 2rem; text-align:center; }
-    header h1 { font-family: 'Cinzel Decorative', cursive; font-size:3rem; margin:0; color:#D4AF37; }
-    h2 { font-family: 'Cinzel Decorative', cursive; color:#D4AF37; border-bottom:2px solid #D4AF37; padding-bottom:0.3rem; margin-top:2rem; }
-    h3 { font-family: 'Cinzel Decorative', cursive; color:#D4AF37; margin-top:1rem; }
+    header h1 { font-family: Georgia, 'Times New Roman', serif; font-size:3rem; margin:0; color:#D4AF37; }
+    h2 { font-family: Georgia, 'Times New Roman', serif; color:#D4AF37; border-bottom:2px solid #D4AF37; padding-bottom:0.3rem; margin-top:2rem; }
+    h3 { font-family: Georgia, 'Times New Roman', serif; color:#D4AF37; margin-top:1rem; }
     main { padding:2rem; max-width:1000px; margin:auto; }
     ul { list-style:none; padding:0; }
     li { margin-bottom:1rem; }
@@ -120,6 +119,31 @@
       font-weight:500;
     }
 
+
+    .hero-slider::before {
+      content: "Bilder werden geladen...";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 1rem;
+      z-index: 0;
+    }
+    .hero-slide {
+      z-index: 1;
+    }
+    .hero-slide img:not([src]) {
+      visibility: hidden;
+    }
+    @media (max-width: 600px){
+      header { padding:2.5rem 1rem; }
+      header h1 { font-size:2rem; }
+      main { padding:1.25rem; }
+      .hero-slider { height:260px; max-height:260px; }
+    }
+
 </style>
 </head>
 <body>
@@ -128,14 +152,14 @@
     <p>Bewegendes Theater für alle</p>
   </header>
   <div class="hero-slider">
-    <div class="hero-slide active"><img src="bilder/hero/hero1.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero2.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero3.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero4.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero5.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero6.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero7.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero8.jpg" alt=""></div>
+    <div class="hero-slide active"><img data-src="bilder/hero/hero1.jpg" alt=""></div>
+    <div class="hero-slide"><img data-src="bilder/hero/hero2.jpg" alt=""></div>
+    <div class="hero-slide"><img data-src="bilder/hero/hero3.jpg" alt=""></div>
+    <div class="hero-slide"><img data-src="bilder/hero/hero4.jpg" alt=""></div>
+    <div class="hero-slide"><img data-src="bilder/hero/hero5.jpg" alt=""></div>
+    <div class="hero-slide"><img data-src="bilder/hero/hero6.jpg" alt=""></div>
+    <div class="hero-slide"><img data-src="bilder/hero/hero7.jpg" alt=""></div>
+    <div class="hero-slide"><img data-src="bilder/hero/hero8.jpg" alt=""></div>
   </div>
 
   <main>
@@ -168,6 +192,10 @@
     Fr 20. November 2026<br>
     Sa 21. November 2026
     </p>
+  </div>
+
+  <div class="plakat-block">
+    <img src="bilder/aktuell/tagtraumer.png" alt="Plakat Tagträumer – Freie Bühne Basel" loading="lazy" decoding="async">
   </div>
 </div>
 <p>
@@ -205,19 +233,19 @@
 
 <div class="vorstand">
   <div class="mitglied">
-    <img src="bilder/vorstand/carolin.jpg" alt="Carolin Pfäffli">
+    <img src="bilder/vorstand/carolin.jpg" alt="Carolin Pfäffli" loading="lazy" decoding="async">
     <h3>Carolin Pfäffli</h3>
     <p>Präsidentin – Schauspielerin &amp; Regisseurin</p>
     <p>Caro’s Arbeit als Schauspielerin, Regisseurin und Produktionsleiterin verbindet künstlerische Kreativität mit organisatorischem Geschick. Als Präsidentin der Freien Bühne Basel bringt sie wertvolle Leitungserfahrung mit und sorgt für einen reibungslosen Ablauf.</p>
   </div>
   <div class="mitglied">
-    <img src="bilder/vorstand/anja.jpg" alt="Anja Schlegel">
+    <img src="bilder/vorstand/anja.jpg" alt="Anja Schlegel" loading="lazy" decoding="async">
     <h3>Anja Schlegel</h3>
     <p>Vizepräsidentin – Schauspielerin</p>
     <p>Anja ist seit ihrem Abschluss an der Schauspielschule Basel als freischaffende Schauspielerin tätig. Mit ihrer Leidenschaft für vielfältige Theater- und Kunstprojekte ist sie eine inspirierende Bereicherung für den Verein. Als Vizepräsidentin und Aktuarin der Freien Bühne Basel ist sie mit vollem Engagement dabei.</p>
   </div>
   <div class="mitglied">
-    <img src="bilder/vorstand/benjamin.jpg" alt="Benjamin Zimber">
+    <img src="bilder/vorstand/benjamin.jpg" alt="Benjamin Zimber" loading="lazy" decoding="async">
     <h3>Benjamin Zimber</h3>
     <p>Kassier – Schauspieler &amp; Autor</p>
     <p>Benjamin bringt langjährige Erfahrung als Schauspieler und Bühnenkämpfer mit. Von Strassentheater bis Musical erweckt er facettenreiche Charaktere zum Leben. Wenn er nicht auf der Bühne steht, arbeitet er als Landwirt und Pädagoge.</p>
@@ -257,14 +285,34 @@
 
   <script>
 document.addEventListener("DOMContentLoaded", function () {
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.hero-slide');
-
+  const slides = Array.from(document.querySelectorAll('.hero-slide'));
   if (!slides.length) return;
 
-  setInterval(() => {
+  // Bilder erst NACH dem ersten Seitenaufbau laden.
+  function loadSlideImage(slide) {
+    const img = slide.querySelector('img');
+    if (!img || img.src) return;
+    const src = img.getAttribute('data-src');
+    if (src) {
+      img.src = src;
+      img.loading = "lazy";
+      img.decoding = "async";
+    }
+  }
+
+  // Erstes Bild laden, danach die restlichen mit Verzögerung.
+  loadSlideImage(slides[0]);
+
+  setTimeout(function () {
+    slides.slice(1).forEach(loadSlideImage);
+  }, 1500);
+
+  let currentSlide = 0;
+
+  setInterval(function () {
     slides[currentSlide].classList.remove('active');
     currentSlide = (currentSlide + 1) % slides.length;
+    loadSlideImage(slides[currentSlide]);
     slides[currentSlide].classList.add('active');
   }, 5000);
 });
