@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freie Bühne Basel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet"><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=4P48d4qdk5mX67dDQGgSAbiBzZiFwzYfQbNnXDGovp2znzMr3MQYUJdxHY2v5f0XoIc5526zLXDcHfHuzA5uGExMARcATLE_MI_8QZZ4EKpFv0CglnGgxX2Vq4swX_S4nVllHqgM5tFwUlobpCkAqRexECSTcAsGFTONMWRXlpbmMgHywDeQLNMl9tiwwSn0FDQQZHNgxKcELe7mdUdw0gLG38uu3ZjXgHAopY38853JyRHs3QMFi4Ml_mWPFGsILimlfXk7cT4DIG9eANI1EJu0X0QyKAqFhwq7K8zzhURBjjc-E82BM865biTiH6vr" charset="UTF-8"></script><style>
-    body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
+  <title>Freie Bühne Basel</title><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=T2XXVOhyKSj-kjQrDmcvYqQq5Xh90F9hSdK5kxK4FQ1u3xtscjRI-aHv7dfc0EAY0KzJW1kTyuk4c3J9NzD3klK01ltU-4hWALwi4E4pGOguAfUUZ_DNI6czr0dVAUf8lJ-fxr69jrkLjRrGyDd-mWlUH_ig1Y5p16b5esfo57I72O77aArPjeNDyxT3AagRi94ALlpVJLzUZzqcGzIzyChltvqOMFlS6VKiBhTpckYh9TNjjtx8rRWk6ydGg7sWwvEm0fpX_eeoKgQ3qrgOo14M9dxH-B1L0cGee--803vj0oWvKm2hb27rLaKpOgpm" charset="UTF-8"></script><style>
+    body { font-family: Arial, Helvetica, sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
     header { background:#000; color:white; padding:4rem 2rem; text-align:center; }
-    header h1 { font-family: 'Cinzel Decorative', cursive; font-size:3rem; margin:0; color:#D4AF37; }
-    h2 { font-family: 'Cinzel Decorative', cursive; color:#D4AF37; border-bottom:2px solid #D4AF37; padding-bottom:0.3rem; margin-top:2rem; }
-    h3 { font-family: 'Cinzel Decorative', cursive; color:#D4AF37; margin-top:1rem; }
+    header h1 { font-family: Georgia, 'Times New Roman', serif; font-size:3rem; margin:0; color:#D4AF37; }
+    h2 { font-family: Georgia, 'Times New Roman', serif; color:#D4AF37; border-bottom:2px solid #D4AF37; padding-bottom:0.3rem; margin-top:2rem; }
+    h3 { font-family: Georgia, 'Times New Roman', serif; color:#D4AF37; margin-top:1rem; }
     main { padding:2rem; max-width:1000px; margin:auto; }
     ul { list-style:none; padding:0; }
     li { margin-bottom:1rem; }
@@ -120,6 +119,14 @@
       font-weight:500;
     }
 
+
+    @media (max-width: 600px){
+      header { padding:2.5rem 1rem; }
+      header h1 { font-size:2rem; }
+      main { padding:1.25rem; }
+      .hero-slider { height:260px; max-height:260px; }
+    }
+
 </style>
 </head>
 <body>
@@ -128,14 +135,14 @@
     <p>Bewegendes Theater für alle</p>
   </header>
   <div class="hero-slider">
-    <div class="hero-slide active"><img src="bilder/hero/hero1.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero2.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero3.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero4.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero5.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero6.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero7.jpg" alt=""></div>
-    <div class="hero-slide"><img src="bilder/hero/hero8.jpg" alt=""></div>
+    <div class="hero-slide active"><img src="bilder/hero/hero1.jpg" alt="" loading="eager"></div>
+    <div class="hero-slide"><img src="bilder/hero/hero2.jpg" alt="" loading="lazy"></div>
+    <div class="hero-slide"><img src="bilder/hero/hero3.jpg" alt="" loading="lazy"></div>
+    <div class="hero-slide"><img src="bilder/hero/hero4.jpg" alt="" loading="lazy"></div>
+    <div class="hero-slide"><img src="bilder/hero/hero5.jpg" alt="" loading="lazy"></div>
+    <div class="hero-slide"><img src="bilder/hero/hero6.jpg" alt="" loading="lazy"></div>
+    <div class="hero-slide"><img src="bilder/hero/hero7.jpg" alt="" loading="lazy"></div>
+    <div class="hero-slide"><img src="bilder/hero/hero8.jpg" alt="" loading="lazy"></div>
   </div>
 
   <main>
