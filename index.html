@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freie Bühne Basel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet"><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=nuQrVSSsnB3vy5v0gxzDNpaEK9hmF7gk7QQPu_dJ2SJU6aMK1Hxp4wJx7y5IWQbAYIR1XsJgGVZQ-sXUc0I6aepnr6GLZj2qgNLvRdKyuMIsvfkEFLlWPirjX2BZ9nxOiVFlPeAEuzIqvDkQlygSFgqRz25MwfXG1b52lbCTDWOCVrpGa1c8U-kNr7ooBh1kZxMQF_NdzoFzsB58Y54jenDGa-j-BFMWo-gosa5Je8qNEux7H2dLfGdX9x9yj51PrztWt0KlEI70ZS_r4g_ZG_k2miTkHEDRF7YpSilhXMxolBlUKJBIfiZ4Cns9pi7Wz618pGDAg4nkhEcz_eslcg" charset="UTF-8"></script><style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet"><style>
     body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
     header { background:#000; color:white; padding:4rem 2rem; text-align:center; }
     header h1 { font-family: 'Cinzel Decorative', cursive; font-size:3rem; margin:0; color:#D4AF37; }
@@ -94,65 +94,52 @@
     }
 
 
-    /* Statisches Hero-Mosaik */
-    .hero-mosaic {
-      max-width: 980px;
-      margin: 0.8rem auto 0;
+    /* Einzelnes Hero-Bild */
+    .single-hero {
+      position: relative;
+      max-width: 1100px;
+      height: 420px;
+      margin: 1rem auto 0;
       padding: 0 1rem;
+      box-sizing: border-box;
     }
 
-    .mosaic-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
-    .mosaic-grid figure {
-      margin: 0;
-      overflow: hidden;
-      border-radius: 8px;
-      background: #f4f4f4;
-      aspect-ratio: 16 / 9;
-    }
-
-    .mosaic-grid img {
+    .single-hero img {
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
-      transition: transform 0.35s ease;
+      object-position: center;
+      border-radius: 10px;
     }
 
-    .mosaic-grid figure:hover img {
-      transform: scale(1.03);
-    }
-
-    .mosaic-credit {
-      text-align: right;
-      color: #666;
+    .single-hero-credit {
+      position: absolute;
+      left: 1.8rem;
+      bottom: 0.8rem;
+      background: rgba(0,0,0,0.62);
+      color: #fff;
       font-size: 0.82rem;
-      margin: 0.45rem 0 0;
+      line-height: 1;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
     }
 
     @media (max-width: 760px) {
-      .hero-mosaic {
-        padding: 0 0.75rem;
+      .single-hero {
+        height: 260px;
         margin-top: 0.75rem;
+        padding: 0 0.75rem;
       }
 
-      .mosaic-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
+      .single-hero img {
+        border-radius: 7px;
       }
 
-      .mosaic-grid figure {
-        border-radius: 6px;
-        aspect-ratio: 4 / 3;
-      }
-
-      .mosaic-credit {
-        text-align: center;
-        font-size: 0.75rem;
+      .single-hero-credit {
+        left: 1.3rem;
+        bottom: 0.65rem;
+        font-size: 0.72rem;
       }
     }
 
@@ -165,20 +152,10 @@
     <p>Bewegendes Theater für alle</p>
   </header>
 
-  
-  <section class="hero-mosaic" aria-label="Bilder aus Produktionen der Freien Bühne Basel">
-    <div class="mosaic-grid">
-      <figure><img src="bilder/hero/hero2.jpg" alt="#LoveU" loading="eager"></figure>
-      <figure><img src="bilder/hero/hero3.jpg" alt="#LoveU" loading="lazy"></figure>
-      <figure><img src="bilder/hero/hero4.jpg" alt="#LoveU" loading="lazy"></figure>
-
-      <figure><img src="bilder/hero/hero6.jpg" alt="Die dritte Kolonne" loading="lazy"></figure>
-      <figure><img src="bilder/hero/hero7.jpg" alt="Die dritte Kolonne" loading="lazy"></figure>
-      <figure><img src="bilder/hero/hero8.jpg" alt="Die dritte Kolonne" loading="lazy"></figure>
-    </div>
-    <p class="mosaic-credit">Fotos: Dominique Oser · Julienne Wenger</p>
+  <section class="single-hero" aria-label="Freie Bühne Basel">
+    <img src="bilder/hero/hero8.jpg" alt="Die Dritte Kolonne – Szenenbild" loading="eager" decoding="async">
+    <div class="single-hero-credit">Foto: Julienne Wenger</div>
   </section>
-
 
 <main>
     <h2>Über uns</h2>
@@ -189,29 +166,26 @@
 <p>Mit grossem Elan und Begeisterung arbeiten wir daran, jährlich mindestens eine Produktion auf die Bühne zu bringen, denn wir sind überzeugt, dass Kultur zur Grundversorgung einer Gesellschaft gehört.</p>
 
 
-<h2>Aktuell</h2>
 
+<h2>Aktuell</h2>
 
 <h3>TAGTRÄUMER</h3>
 
-<p>Mit William Mastrosimone’s Tagträumer bringen wir 2026 ein Stück auf die Bühne, das berührt, herausfordert und nachhallt. Die Geschichte von Rose und Cliff – zwei verlorenen Seelen zwischen Sehnsucht und Wirklichkeit – lädt das Publikum ein, in eine Welt voller Träume, Ängste und unerwarteter Begegnungen einzutauchen. Trotz seiner existenziellen Tiefe bietet das Stück auch humorvolle und zärtliche Momente, die das Theatererlebnis ausbalancieren.</p>
+<p>Mit William Mastrosimone’s <em>Tagträumer</em> bringen wir 2026 ein Stück auf die Bühne, das berührt, herausfordert und nachhallt. Die Geschichte von Rose und Cliff – zwei verlorenen Seelen zwischen Sehnsucht und Wirklichkeit – lädt das Publikum ein, in eine Welt voller Träume, Ängste und unerwarteter Begegnungen einzutauchen. Trotz seiner existenziellen Tiefe bietet das Stück auch humorvolle und zärtliche Momente, die das Theatererlebnis ausbalancieren.</p>
 
-<p>Die Aufführungen in Basel und Interlaken im vergangenen Februar waren ein grosser Erfolg. Nun befinden wir uns in der Planungs und Finanzierungsphase für die Auftritte in Berlin.</p>
+<p>Die Aufführungen in Basel und Interlaken im vergangenen Februar waren ein grosser Erfolg. Nun befinden wir uns in der Planungs- und Finanzierungsphase für die Auftritte in Berlin.</p>
 
 <h4>Aufführungen:</h4>
-<div class="aktuell-layout">
-  <div class="auffuehrungen-block">
-    <p>
-    <strong>Brotfabrik Berlin</strong><br>
-    Caligaripl. 1<br>
-    13086 Berlin<br>
-    Deutschland<br><br>
-    Do 19. November 2026<br>
-    Fr 20. November 2026<br>
-    Sa 21. November 2026
-    </p>
-  </div>
-</div>
+<p>
+<strong>Brotfabrik Berlin</strong><br>
+Caligaripl. 1<br>
+13086 Berlin<br>
+Deutschland<br><br>
+Do 19. November 2026<br>
+Fr 20. November 2026<br>
+Sa 21. November 2026
+</p>
+
 <p>
 <strong>Regie:</strong>
 <a href="https://www.instagram.com/katijaballi/" target="_blank" rel="noopener" class="name-link">Katja Balli</a><br>
@@ -222,15 +196,30 @@
 <a href="https://www.instagram.com/carolin.pfaeffli.actress/" target="_blank" rel="noopener" class="name-link">Carolin Pfäffli</a>
 </p>
 
-<p>Tickets erhältlich auf <a href="https://eventfrog.ch/de/p/gruppen/tagtraeumer-von-william-mastrosimone-7396915239164375685.html" target="_blank" rel="noopener" class="eventfrog-link">Eventfrog</a>.</p>
+<h3>SMASH THE CONTROL MACHINE</h3>
 
-<h3>LESUNG WILLIAM S. BURROUGHS</h3>
+<p>Mit ausgewählten Texten von William S. Burroughs, einem der bedeutendsten Autoren der amerikanischen Beat Generation, gestalten wir einen spartenübergreifenden Leseabend aus Literatur, Schauspiel und Musik. Die Zuhörerinnen und Zuhörer werden auf eine Reise ins Amerika der Fünfzigerjahre mitgenommen – in eine ganz andere Welt als jene, die uns hier vertraut ist. Und doch lassen sich viele Parallelen erkennen, aus denen wir einiges lernen können.</p>
 
-<p>Mit ausgewählten Texten von William S. Burroughs, einem der bedeutendsten Autoren der amerikanischen Beat Generation, gestalten wir einen intensiven Leseabend. Die Zuhörerinnen und Zuhörer werden mitgenommen auf eine Reise ins Amerika der Fünfzigerjahre – eine ganz andere Welt als die, die uns hier vertraut ist. Und doch lassen sich viele Parallelen erkennen, aus denen wir einiges lernen können.</p>
+<p>Im Zentrum des Abends steht die Frage, wie weit Kunst gehen darf. Ein besonderes Anliegen ist uns zudem das Thema Suchtprävention, denn der Konsum illegaler Substanzen und seine gesellschaftlichen Folgen ziehen sich wie ein roter Faden durch Burroughs’ Werk.</p>
 
-<p>Dabei stellen wir vor allem die Frage in den Mittelpunkt, wie weit Kunst gehen darf. Ein besonderes Anliegen ist uns zudem das Thema Suchtprävention, denn der Konsum illegaler Substanzen und seine gesellschaftlichen Folgen zieht sich wie ein roter Faden durch Burroughs’ Werk.</p>
+<h4>Aufführungen:</h4>
+<p>
+<strong>Theater Bau 3</strong><br>
+Dornacherstrasse 192<br>
+4053 Basel<br><br>
+Fr. 5. März 2027<br>
+Sa. 6. März 2027<br>
+Fr. 12. März 2027<br>
+Sa. 13. März 2027
+</p>
 
-<p><strong>Die Aufführungen sind für Anfang 2027 geplant.</strong></p>
+<p>
+<strong>Künstlerische Leitung:</strong> Anja Schlegel<br>
+<strong>Spiel:</strong> Anja Schlegel, Silvio Bruder<br>
+<strong>Musik:</strong> The Incident (Sebastian Hausmann und Mikhail Felix)<br>
+<strong>Produktionsleitung:</strong> Benjamin Zimber, Carolin Pfäffli
+</p>
+
 <h2>Produktionen</h2>
     <ul class="produktionen">
       <li>
