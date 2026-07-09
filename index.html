@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freie Bühne Basel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet"><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=mxiDG9vbxr14yPINqI_xap466Abt8INEEZh0tIw_QQU1BvfzyjOqtQPPHfSTS7VTIxcmj9GtIiv1gwyluAWU_rdcHf73BQGl3HdMwWvfinEUCWDh42_btDp-P0Aja0sNoby51ouUR0kMA1vy6vp-cEocYHUOvwtwdHkdE7STkm6WMhv6pbpbS14poUN0iRtGfvR0JxTmTPNcVU7fyqM6WpxhRX47S4fcieMcRkhWkLUhXkR10eq_uDn0tZwWcrKCgbs7QMsMQ1Tg7IIGX-lOM5bpIym3u1K2NUClVSVsAwo2RfS_bEia1uB_UFrhn0-CDULu9GM-SYv6fRoG_azF8A" charset="UTF-8"></script><style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet"><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=nuQrVSSsnB3vy5v0gxzDNpaEK9hmF7gk7QQPu_dJ2SJU6aMK1Hxp4wJx7y5IWQbAYIR1XsJgGVZQ-sXUc0I6aepnr6GLZj2qgNLvRdKyuMIsvfkEFLlWPirjX2BZ9nxOiVFlPeAEuzIqvDkQlygSFgqRz25MwfXG1b52lbCTDWOCVrpGa1c8U-kNr7ooBh1kZxMQF_NdzoFzsB58Y54jenDGa-j-BFMWo-gosa5Je8qNEux7H2dLfGdX9x9yj51PrztWt0KlEI70ZS_r4g_ZG_k2miTkHEDRF7YpSilhXMxolBlUKJBIfiZ4Cns9pi7Wz618pGDAg4nkhEcz_eslcg" charset="UTF-8"></script><style>
     body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
     header { background:#000; color:white; padding:4rem 2rem; text-align:center; }
     header h1 { font-family: 'Cinzel Decorative', cursive; font-size:3rem; margin:0; color:#D4AF37; }
@@ -94,66 +94,65 @@
     }
 
 
-    /* Kompakter Hero-Slider */
-    .hero-slider {
-      position: relative;
-      width: 100%;
-      height: 340px;
+    /* Statisches Hero-Mosaik */
+    .hero-mosaic {
+      max-width: 980px;
+      margin: 0.8rem auto 0;
+      padding: 0 1rem;
+    }
+
+    .mosaic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .mosaic-grid figure {
+      margin: 0;
       overflow: hidden;
-      background: #fff;
-      margin: 1rem auto 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-radius: 8px;
+      background: #f4f4f4;
+      aspect-ratio: 16 / 9;
     }
 
-    .hero-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.9s ease-in-out, visibility 0.9s ease-in-out;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-    }
-
-    .hero-slide.is-active {
-      opacity: 1;
-      visibility: visible;
-      z-index: 1;
-    }
-
-    .hero-slide img {
+    .mosaic-grid img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
       display: block;
+      object-fit: cover;
+      transition: transform 0.35s ease;
     }
 
-    .hero-credit {
-      position: absolute;
-      left: 1rem;
-      bottom: 0.7rem;
-      background: rgba(0,0,0,0.62);
-      color: #fff;
-      font-size: 0.78rem;
-      line-height: 1;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      z-index: 2;
+    .mosaic-grid figure:hover img {
+      transform: scale(1.03);
     }
 
-    @media (max-width: 700px) {
-      .hero-slider {
-        height: 230px;
+    .mosaic-credit {
+      text-align: right;
+      color: #666;
+      font-size: 0.82rem;
+      margin: 0.45rem 0 0;
+    }
+
+    @media (max-width: 760px) {
+      .hero-mosaic {
+        padding: 0 0.75rem;
         margin-top: 0.75rem;
       }
 
-      .hero-credit {
-        left: 0.65rem;
-        bottom: 0.55rem;
-        font-size: 0.68rem;
-        padding: 0.3rem 0.55rem;
+      .mosaic-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+      }
+
+      .mosaic-grid figure {
+        border-radius: 6px;
+        aspect-ratio: 4 / 3;
+      }
+
+      .mosaic-credit {
+        text-align: center;
+        font-size: 0.75rem;
       }
     }
 
@@ -166,39 +165,20 @@
     <p>Bewegendes Theater für alle</p>
   </header>
 
-  <section class="hero-slider" aria-label="Bildergalerie Freie Bühne Basel">
-    <div class="hero-slide is-active">
-      <img src="bilder/hero/hero1.jpg" alt="#LoveU Plakat – Freie Bühne Basel" loading="eager" decoding="async">
-      <div class="hero-credit">Foto: Pascal Burger</div>
+  
+  <section class="hero-mosaic" aria-label="Bilder aus Produktionen der Freien Bühne Basel">
+    <div class="mosaic-grid">
+      <figure><img src="bilder/hero/hero2.jpg" alt="#LoveU" loading="eager"></figure>
+      <figure><img src="bilder/hero/hero3.jpg" alt="#LoveU" loading="lazy"></figure>
+      <figure><img src="bilder/hero/hero4.jpg" alt="#LoveU" loading="lazy"></figure>
+
+      <figure><img src="bilder/hero/hero6.jpg" alt="Die dritte Kolonne" loading="lazy"></figure>
+      <figure><img src="bilder/hero/hero7.jpg" alt="Die dritte Kolonne" loading="lazy"></figure>
+      <figure><img src="bilder/hero/hero8.jpg" alt="Die dritte Kolonne" loading="lazy"></figure>
     </div>
-    <div class="hero-slide">
-      <img src="bilder/hero/hero2.jpg" alt="#LoveU Szenenfoto 1" loading="lazy" decoding="async">
-      <div class="hero-credit">Foto: Dominique Oser</div>
-    </div>
-    <div class="hero-slide">
-      <img src="bilder/hero/hero3.jpg" alt="#LoveU Szenenfoto 2" loading="lazy" decoding="async">
-      <div class="hero-credit">Foto: Dominique Oser</div>
-    </div>
-    <div class="hero-slide">
-      <img src="bilder/hero/hero4.jpg" alt="#LoveU Szenenfoto 3" loading="lazy" decoding="async">
-      <div class="hero-credit">Foto: Dominique Oser</div>
-    </div>
-    <div class="hero-slide">
-      <img src="bilder/hero/hero5.jpg" alt="Die Dritte Kolonne Plakat – Freie Bühne Basel" loading="lazy" decoding="async">
-    </div>
-    <div class="hero-slide">
-      <img src="bilder/hero/hero6.jpg" alt="Die Dritte Kolonne Szenenfoto 1" loading="lazy" decoding="async">
-      <div class="hero-credit">Foto: Julienne Wenger</div>
-    </div>
-    <div class="hero-slide">
-      <img src="bilder/hero/hero7.jpg" alt="Die Dritte Kolonne Szenenfoto 2" loading="lazy" decoding="async">
-      <div class="hero-credit">Foto: Julienne Wenger</div>
-    </div>
-    <div class="hero-slide">
-      <img src="bilder/hero/hero8.jpg" alt="Die Dritte Kolonne Szenenfoto 3" loading="lazy" decoding="async">
-      <div class="hero-credit">Foto: Julienne Wenger</div>
-    </div>
+    <p class="mosaic-credit">Fotos: Dominique Oser · Julienne Wenger</p>
   </section>
+
 
 <main>
     <h2>Über uns</h2>
@@ -316,22 +296,5 @@
     <p>Schreibt uns gerne per <a href="mailto:freiebuehnebasel@gmail.com">E-Mail</a> oder folgt uns auf <a href="https://www.instagram.com/freie.buehne.basel/" target="_blank">Instagram</a>.</p>
   </main>
   <footer>&copy; 2025 Freie Bühne Basel</footer>
-
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll(".hero-slider .hero-slide");
-  if (!slides.length) return;
-
-  let currentSlide = 0;
-  const displayTime = 4500;
-
-  setInterval(function () {
-    slides[currentSlide].classList.remove("is-active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("is-active");
-  }, displayTime);
-});
-</script>
-
 </body>
 </html>
