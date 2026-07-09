@@ -45,7 +45,9 @@
     h4 { margin-top: 1.5rem; }
     ul { margin: 1rem 0 1.5rem 0; }
     li { margin-bottom: 0.7rem; }
-/* Aktuell: Aufführungen + Plakat */
+
+
+    /* Aktuell: Aufführungen + Plakat */
     .aktuell-layout{
       display:flex;
       gap:2rem;
@@ -93,6 +95,65 @@
       font-weight:500;
     }
 
+
+    /* Hero Slider – stabile Version */
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      background: #fff;
+      margin-top: 1.5rem;
+    }
+
+    .hero-slider .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-slider .hero-slide.is-active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+
+    .hero-slider .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-caption {
+      position: absolute;
+      left: 1rem;
+      bottom: 0.75rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 0.85rem;
+      line-height: 1;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      z-index: 2;
+    }
+
+    @media (max-width: 700px) {
+      .hero-slider {
+        height: 280px;
+        margin-top: 1rem;
+      }
+
+      .hero-caption {
+        font-size: 0.75rem;
+        left: 0.75rem;
+        bottom: 0.6rem;
+      }
+    }
+
+
 </style>
 </head>
 <body>
@@ -101,16 +162,41 @@
     <p>Bewegendes Theater für alle</p>
   </header>
 
-  <div class="hero-slider" aria-label="Bildergalerie Freie Bühne Basel">
-    <div class="hero-slide active"><img src="bilder/hero/hero1.jpg" alt="Freie Bühne Basel Hero Bild 1" loading="eager" decoding="async"><div class="hero-credit">Foto: Pascal Burger</div></div>
-    <div class="hero-slide"><img src="bilder/hero/hero2.jpg" alt="Freie Bühne Basel Hero Bild 2" loading="lazy" decoding="async"><div class="hero-credit">Foto: Dominique Oser</div></div>
-    <div class="hero-slide"><img src="bilder/hero/hero3.jpg" alt="Freie Bühne Basel Hero Bild 3" loading="lazy" decoding="async"><div class="hero-credit">Foto: Dominique Oser</div></div>
-    <div class="hero-slide"><img src="bilder/hero/hero4.jpg" alt="Freie Bühne Basel Hero Bild 4" loading="lazy" decoding="async"><div class="hero-credit">Foto: Dominique Oser</div></div>
-    <div class="hero-slide"><img src="bilder/hero/hero5.jpg" alt="Freie Bühne Basel Hero Bild 5" loading="lazy" decoding="async"></div>
-    <div class="hero-slide"><img src="bilder/hero/hero6.jpg" alt="Freie Bühne Basel Hero Bild 6" loading="lazy" decoding="async"><div class="hero-credit">Foto: Julienne Wenger</div></div>
-    <div class="hero-slide"><img src="bilder/hero/hero7.jpg" alt="Freie Bühne Basel Hero Bild 7" loading="lazy" decoding="async"><div class="hero-credit">Foto: Julienne Wenger</div></div>
-    <div class="hero-slide"><img src="bilder/hero/hero8.jpg" alt="Freie Bühne Basel Hero Bild 8" loading="lazy" decoding="async"><div class="hero-credit">Foto: Julienne Wenger</div></div>
-  </div>
+  <section class="hero-slider" aria-label="Bildergalerie">
+
+    <div class="hero-slide is-active">
+      <img src="bilder/hero/hero1.jpg" alt="Freie Bühne Basel Bild 1" loading="eager" decoding="async">
+      <div class="hero-caption">Foto: Pascal Burger</div>
+    </div>
+    <div class="hero-slide">
+      <img src="bilder/hero/hero2.jpg" alt="Freie Bühne Basel Bild 2" loading="lazy" decoding="async">
+      <div class="hero-caption">Foto: Dominique Oser</div>
+    </div>
+    <div class="hero-slide">
+      <img src="bilder/hero/hero3.jpg" alt="Freie Bühne Basel Bild 3" loading="lazy" decoding="async">
+      <div class="hero-caption">Foto: Dominique Oser</div>
+    </div>
+    <div class="hero-slide">
+      <img src="bilder/hero/hero4.jpg" alt="Freie Bühne Basel Bild 4" loading="lazy" decoding="async">
+      <div class="hero-caption">Foto: Dominique Oser</div>
+    </div>
+    <div class="hero-slide">
+      <img src="bilder/hero/hero5.jpg" alt="Freie Bühne Basel Bild 5" loading="lazy" decoding="async">
+      
+    </div>
+    <div class="hero-slide">
+      <img src="bilder/hero/hero6.jpg" alt="Freie Bühne Basel Bild 6" loading="lazy" decoding="async">
+      <div class="hero-caption">Foto: Julienne Wenger</div>
+    </div>
+    <div class="hero-slide">
+      <img src="bilder/hero/hero7.jpg" alt="Freie Bühne Basel Bild 7" loading="lazy" decoding="async">
+      <div class="hero-caption">Foto: Julienne Wenger</div>
+    </div>
+    <div class="hero-slide">
+      <img src="bilder/hero/hero8.jpg" alt="Freie Bühne Basel Bild 8" loading="lazy" decoding="async">
+      <div class="hero-caption">Foto: Julienne Wenger</div>
+    </div>
+  </section>
 
 <main>
     <h2>Über uns</h2>
@@ -231,15 +317,15 @@
 
   <script>
 document.addEventListener("DOMContentLoaded", function () {
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.hero-slide');
-
+  const slides = document.querySelectorAll(".hero-slider .hero-slide");
   if (!slides.length) return;
 
-  setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
+  let current = 0;
+
+  setInterval(function () {
+    slides[current].classList.remove("is-active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("is-active");
   }, 5000);
 });
 </script>
