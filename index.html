@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freie Bühne Basel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet"><style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter&display=swap" rel="stylesheet"><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=mxiDG9vbxr14yPINqI_xap466Abt8INEEZh0tIw_QQU1BvfzyjOqtQPPHfSTS7VTIxcmj9GtIiv1gwyluAWU_rdcHf73BQGl3HdMwWvfinEUCWDh42_btDp-P0Aja0sNoby51ouUR0kMA1vy6vp-cEocYHUOvwtwdHkdE7STkm6WMhv6pbpbS14poUN0iRtGfvR0JxTmTPNcVU7fyqM6WpxhRX47S4fcieMcRkhWkLUhXkR10eq_uDn0tZwWcrKCgbs7QMsMQ1Tg7IIGX-lOM5bpIym3u1K2NUClVSVsAwo2RfS_bEia1uB_UFrhn0-CDULu9GM-SYv6fRoG_azF8A" charset="UTF-8"></script><style>
     body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.6; }
     header { background:#000; color:white; padding:4rem 2rem; text-align:center; }
     header h1 { font-family: 'Cinzel Decorative', cursive; font-size:3rem; margin:0; color:#D4AF37; }
@@ -45,9 +45,7 @@
     h4 { margin-top: 1.5rem; }
     ul { margin: 1rem 0 1.5rem 0; }
     li { margin-bottom: 0.7rem; }
-
-
-    /* Aktuell: Aufführungen + Plakat */
+/* Aktuell: Aufführungen + Plakat */
     .aktuell-layout{
       display:flex;
       gap:2rem;
@@ -96,44 +94,49 @@
     }
 
 
-    /* Hero Slider – stabile Version */
+    /* Kompakter Hero-Slider */
     .hero-slider {
       position: relative;
       width: 100%;
-      height: 500px;
+      height: 340px;
       overflow: hidden;
       background: #fff;
-      margin-top: 1.5rem;
+      margin: 1rem auto 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
-    .hero-slider .hero-slide {
+    .hero-slide {
       position: absolute;
       inset: 0;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 1s ease-in-out;
+      transition: opacity 0.9s ease-in-out, visibility 0.9s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
     }
 
-    .hero-slider .hero-slide.is-active {
+    .hero-slide.is-active {
       opacity: 1;
       visibility: visible;
       z-index: 1;
     }
 
-    .hero-slider .hero-slide img {
+    .hero-slide img {
       width: 100%;
       height: 100%;
       object-fit: contain;
       display: block;
     }
 
-    .hero-caption {
+    .hero-credit {
       position: absolute;
       left: 1rem;
-      bottom: 0.75rem;
-      background: rgba(0, 0, 0, 0.6);
+      bottom: 0.7rem;
+      background: rgba(0,0,0,0.62);
       color: #fff;
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       line-height: 1;
       padding: 0.35rem 0.7rem;
       border-radius: 999px;
@@ -142,14 +145,15 @@
 
     @media (max-width: 700px) {
       .hero-slider {
-        height: 280px;
-        margin-top: 1rem;
+        height: 230px;
+        margin-top: 0.75rem;
       }
 
-      .hero-caption {
-        font-size: 0.75rem;
-        left: 0.75rem;
-        bottom: 0.6rem;
+      .hero-credit {
+        left: 0.65rem;
+        bottom: 0.55rem;
+        font-size: 0.68rem;
+        padding: 0.3rem 0.55rem;
       }
     }
 
@@ -162,39 +166,37 @@
     <p>Bewegendes Theater für alle</p>
   </header>
 
-  <section class="hero-slider" aria-label="Bildergalerie">
-
+  <section class="hero-slider" aria-label="Bildergalerie Freie Bühne Basel">
     <div class="hero-slide is-active">
-      <img src="bilder/hero/hero1.jpg" alt="Freie Bühne Basel Bild 1" loading="eager" decoding="async">
-      <div class="hero-caption">Foto: Pascal Burger</div>
+      <img src="bilder/hero/hero1.jpg" alt="#LoveU Plakat – Freie Bühne Basel" loading="eager" decoding="async">
+      <div class="hero-credit">Foto: Pascal Burger</div>
     </div>
     <div class="hero-slide">
-      <img src="bilder/hero/hero2.jpg" alt="Freie Bühne Basel Bild 2" loading="lazy" decoding="async">
-      <div class="hero-caption">Foto: Dominique Oser</div>
+      <img src="bilder/hero/hero2.jpg" alt="#LoveU Szenenfoto 1" loading="lazy" decoding="async">
+      <div class="hero-credit">Foto: Dominique Oser</div>
     </div>
     <div class="hero-slide">
-      <img src="bilder/hero/hero3.jpg" alt="Freie Bühne Basel Bild 3" loading="lazy" decoding="async">
-      <div class="hero-caption">Foto: Dominique Oser</div>
+      <img src="bilder/hero/hero3.jpg" alt="#LoveU Szenenfoto 2" loading="lazy" decoding="async">
+      <div class="hero-credit">Foto: Dominique Oser</div>
     </div>
     <div class="hero-slide">
-      <img src="bilder/hero/hero4.jpg" alt="Freie Bühne Basel Bild 4" loading="lazy" decoding="async">
-      <div class="hero-caption">Foto: Dominique Oser</div>
+      <img src="bilder/hero/hero4.jpg" alt="#LoveU Szenenfoto 3" loading="lazy" decoding="async">
+      <div class="hero-credit">Foto: Dominique Oser</div>
     </div>
     <div class="hero-slide">
-      <img src="bilder/hero/hero5.jpg" alt="Freie Bühne Basel Bild 5" loading="lazy" decoding="async">
-      
+      <img src="bilder/hero/hero5.jpg" alt="Die Dritte Kolonne Plakat – Freie Bühne Basel" loading="lazy" decoding="async">
     </div>
     <div class="hero-slide">
-      <img src="bilder/hero/hero6.jpg" alt="Freie Bühne Basel Bild 6" loading="lazy" decoding="async">
-      <div class="hero-caption">Foto: Julienne Wenger</div>
+      <img src="bilder/hero/hero6.jpg" alt="Die Dritte Kolonne Szenenfoto 1" loading="lazy" decoding="async">
+      <div class="hero-credit">Foto: Julienne Wenger</div>
     </div>
     <div class="hero-slide">
-      <img src="bilder/hero/hero7.jpg" alt="Freie Bühne Basel Bild 7" loading="lazy" decoding="async">
-      <div class="hero-caption">Foto: Julienne Wenger</div>
+      <img src="bilder/hero/hero7.jpg" alt="Die Dritte Kolonne Szenenfoto 2" loading="lazy" decoding="async">
+      <div class="hero-credit">Foto: Julienne Wenger</div>
     </div>
     <div class="hero-slide">
-      <img src="bilder/hero/hero8.jpg" alt="Freie Bühne Basel Bild 8" loading="lazy" decoding="async">
-      <div class="hero-caption">Foto: Julienne Wenger</div>
+      <img src="bilder/hero/hero8.jpg" alt="Die Dritte Kolonne Szenenfoto 3" loading="lazy" decoding="async">
+      <div class="hero-credit">Foto: Julienne Wenger</div>
     </div>
   </section>
 
@@ -320,13 +322,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".hero-slider .hero-slide");
   if (!slides.length) return;
 
-  let current = 0;
+  let currentSlide = 0;
+  const displayTime = 4500;
 
   setInterval(function () {
-    slides[current].classList.remove("is-active");
-    current = (current + 1) % slides.length;
-    slides[current].classList.add("is-active");
-  }, 5000);
+    slides[currentSlide].classList.remove("is-active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("is-active");
+  }, displayTime);
 });
 </script>
 
