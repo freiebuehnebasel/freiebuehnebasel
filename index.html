@@ -100,6 +100,18 @@
     <h1>Freie Bühne Basel</h1>
     <p>Bewegendes Theater für alle</p>
   </header>
+
+  <div class="hero-slider" aria-label="Bildergalerie Freie Bühne Basel">
+    <div class="hero-slide active"><img src="bilder/hero/hero1.jpg" alt="Freie Bühne Basel Hero Bild 1" loading="eager" decoding="async"><div class="hero-credit">Foto: Pascal Burger</div></div>
+    <div class="hero-slide"><img src="bilder/hero/hero2.jpg" alt="Freie Bühne Basel Hero Bild 2" loading="lazy" decoding="async"><div class="hero-credit">Foto: Dominique Oser</div></div>
+    <div class="hero-slide"><img src="bilder/hero/hero3.jpg" alt="Freie Bühne Basel Hero Bild 3" loading="lazy" decoding="async"><div class="hero-credit">Foto: Dominique Oser</div></div>
+    <div class="hero-slide"><img src="bilder/hero/hero4.jpg" alt="Freie Bühne Basel Hero Bild 4" loading="lazy" decoding="async"><div class="hero-credit">Foto: Dominique Oser</div></div>
+    <div class="hero-slide"><img src="bilder/hero/hero5.jpg" alt="Freie Bühne Basel Hero Bild 5" loading="lazy" decoding="async"></div>
+    <div class="hero-slide"><img src="bilder/hero/hero6.jpg" alt="Freie Bühne Basel Hero Bild 6" loading="lazy" decoding="async"><div class="hero-credit">Foto: Julienne Wenger</div></div>
+    <div class="hero-slide"><img src="bilder/hero/hero7.jpg" alt="Freie Bühne Basel Hero Bild 7" loading="lazy" decoding="async"><div class="hero-credit">Foto: Julienne Wenger</div></div>
+    <div class="hero-slide"><img src="bilder/hero/hero8.jpg" alt="Freie Bühne Basel Hero Bild 8" loading="lazy" decoding="async"><div class="hero-credit">Foto: Julienne Wenger</div></div>
+  </div>
+
 <main>
     <h2>Über uns</h2>
 
@@ -216,5 +228,21 @@
     <p>Schreibt uns gerne per <a href="mailto:freiebuehnebasel@gmail.com">E-Mail</a> oder folgt uns auf <a href="https://www.instagram.com/freie.buehne.basel/" target="_blank">Instagram</a>.</p>
   </main>
   <footer>&copy; 2025 Freie Bühne Basel</footer>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+
+  if (!slides.length) return;
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 5000);
+});
+</script>
+
 </body>
 </html>
