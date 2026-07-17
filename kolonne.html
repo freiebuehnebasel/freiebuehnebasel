@@ -34,13 +34,7 @@
     a.name { color:#111; text-decoration:none; border-bottom: 1px solid rgba(212,175,55,0.35); }
     a.name:hover { color: var(--gold); border-bottom-color: var(--gold); }
     footer { text-align:center; color:#666; padding:28px 16px; }
-  
-    .gallery img.tall {
-      aspect-ratio: auto;
-      object-fit: contain;
-    }
-
-    /* Lightbox */
+/* Lightbox */
     .lightbox-overlay {
       position: fixed;
       inset: 0;
@@ -76,6 +70,14 @@ text-align:center;
 margin-top:.35rem;
 }
 
+
+    .gallery img.full-image {
+      aspect-ratio: auto;
+      height: auto;
+      object-fit: contain;
+      background: #fff;
+    }
+
 </style>
 </head>
 <body>
@@ -94,7 +96,7 @@ margin-top:.35rem;
     <h2>Besetzung</h2>
     <p><strong>Die Ältere:</strong> <a class="name" href="https://www.instagram.com/anjaschlegel_/" target="_blank">Anja Schlegel</a></p>
     <p><strong>Die Jüngere:</strong> <a class="name" href="https://www.instagram.com/carolin.pfaeffli.actress/" target="_blank">Carolin Pfäffli</a></p>
-    <p><strong>Die Gegensprechanlage:</strong> <a class="name" href="https://www.instagram.com/momo_hermann/" target="_blank">Silvio Bruder</a></p>
+    <p><strong>Die Gegensprechanlage:</strong> <a class="name" href="https://silviobruder.ch/" target="_blank">Silvio Bruder</a></p>
 
     <h2>Team</h2>
     <p><strong>Regie:</strong> <a class="name" href="https://www.instagram.com/jasmin_wenger_actress/" target="_blank">Jasmin Wenger</a></p>
@@ -103,16 +105,28 @@ margin-top:.35rem;
     <!-- Direkt die Galerie ohne Überschrift -->
     
     <div class="gallery">
-      <figure><img src="bilder/kolonne/kolonne1.jpg" data-full="bilder/kolonne/kolonne1.jpg" class="lightbox-thumb" alt="Bild 1"><figcaption>Foto: Julienne Wenger</figcaption></figure>
-      <figure><img src="bilder/kolonne/kolonne2.jpg" data-full="bilder/kolonne/kolonne2.jpg" class="lightbox-thumb" alt="Bild 2"><figcaption>Foto: Julienne Wenger</figcaption></figure>
-      <figure><img src="bilder/kolonne/kolonne3.jpg" data-full="bilder/kolonne/kolonne3.jpg" class="lightbox-thumb" alt="Bild 3"><figcaption>Foto: Julienne Wenger</figcaption></figure>
-      <figure><img src="bilder/kolonne/kolonne4.jpg" data-full="bilder/kolonne/kolonne4.jpg" class="lightbox-thumb" alt="Bild 4"><figcaption>Foto: Beat Schlegel</figcaption></figure>
       <figure>
-        <img src="bilder/kolonne/kolonne5.jpg" data-full="bilder/kolonne/kolonne5.jpg" class="tall lightbox-thumb" alt="Bild 5">
+        <img src="bilder/kolonne/kolonne1.jpg" data-full="bilder/kolonne/kolonne1.jpg" class="lightbox-thumb" alt="Bild 1">
         <figcaption>Foto: Julienne Wenger</figcaption>
       </figure>
       <figure>
-        <img src="bilder/kolonne/kolonne6.jpg" data-full="bilder/kolonne/kolonne6.jpg" class="lightbox-thumb" alt="Bild 6">
+        <img src="bilder/kolonne/kolonne2.jpg" data-full="bilder/kolonne/kolonne2.jpg" class="lightbox-thumb" alt="Bild 2">
+        <figcaption>Foto: Julienne Wenger</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/kolonne/kolonne3.jpg" data-full="bilder/kolonne/kolonne3.jpg" class="lightbox-thumb" alt="Bild 3">
+        <figcaption>Foto: Julienne Wenger</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/kolonne/kolonne4.jpg" data-full="bilder/kolonne/kolonne4.jpg" class="lightbox-thumb" alt="Bild 4">
+        <figcaption>Foto: Beat Schlegel</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/kolonne/kolonne5.jpg" data-full="bilder/kolonne/kolonne5.jpg" class="lightbox-thumb full-image" alt="Bild 5">
+        <figcaption>Foto: Julienne Wenger</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/kolonne/kolonne6.jpg" data-full="bilder/kolonne/kolonne6.jpg" class="lightbox-thumb full-image" alt="Bild 6">
         <figcaption>Illustration: Freie Bühne Basel</figcaption>
       </figure>
     </div>
