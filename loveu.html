@@ -60,6 +60,12 @@ a.gold-underline::after{
       font-weight: 300;
     }
 
+
+.gallery figure{margin:0}
+.gallery figcaption{font-size:.85em;color:#777;text-align:center;font-style:italic;margin-top:6px}
+.gallery img{width:100%;height:260px;object-fit:cover;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.2);cursor:pointer}
+.gallery img.full-image{object-fit:contain;background:#fff}
+
 </style>
 </head>
 <body>
@@ -88,11 +94,12 @@ a.gold-underline::after{
 
     <h2>Galerie</h2>
         <div class="gallery">
-      <img src="bilder/loveu/loveu1.jpg" alt="#LoveU Bild 1" data-full="bilder/loveu/loveu1.jpg" class="lightbox-thumb">
-      <img src="bilder/loveu/loveu2.jpg" alt="#LoveU Bild 2" data-full="bilder/loveu/loveu2.jpg" class="lightbox-thumb">
-      <img src="bilder/loveu/loveu3.jpg" alt="#LoveU Bild 3" data-full="bilder/loveu/loveu3.jpg" class="lightbox-thumb">
-      <img src="bilder/loveu/loveu4.jpg" alt="#LoveU Bild 4" data-full="bilder/loveu/loveu4.jpg" class="lightbox-thumb">
-      <img src="bilder/loveu/loveu5.jpg" alt="#LoveU Bild 5" data-full="bilder/loveu/loveu5.jpg" class="lightbox-thumb">
+<figure><img src="bilder/loveu/loveu1.jpg" alt="#LoveU Bild 1" data-full="bilder/loveu/loveu1.jpg" class="lightbox-thumb"><figcaption>Foto: Dominique Oser</figcaption></figure>
+<figure><img src="bilder/loveu/loveu2.jpg" alt="#LoveU Bild 2" data-full="bilder/loveu/loveu2.jpg" class="lightbox-thumb"><figcaption>Foto: Dominique Oser</figcaption></figure>
+<figure><img src="bilder/loveu/loveu3.jpg" alt="#LoveU Bild 3" data-full="bilder/loveu/loveu3.jpg" class="lightbox-thumb"><figcaption>Foto: Dominique Oser</figcaption></figure>
+<figure><img src="bilder/loveu/loveu4.jpg" alt="#LoveU Bild 4" data-full="bilder/loveu/loveu4.jpg" class="lightbox-thumb"><figcaption>Foto: Dominique Oser</figcaption></figure>
+<figure><img src="bilder/loveu/loveu5.jpg" alt="#LoveU Bild 5" data-full="bilder/loveu/loveu5.jpg" class="lightbox-thumb full-image"><figcaption>Foto: Dominique Oser</figcaption></figure>
+<figure><img src="bilder/loveu/loveu6.jpg" alt="#LoveU Bild 6" data-full="bilder/loveu/loveu6.jpg" class="lightbox-thumb full-image"><figcaption>Foto: Pascal Burger</figcaption></figure>
 </div>
 
     </div>
